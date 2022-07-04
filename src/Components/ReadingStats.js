@@ -4,11 +4,30 @@ import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card'
 import CardGroup from 'react-bootstrap/CardGroup'
 import '../App.css';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import Popover from 'react-bootstrap/Popover'
+import Button from 'react-bootstrap/Button'
+
+
 
 
 function ReadingStats({books}) {
 
     let pagesRead = books.reduce((previous, current) => previous + current.pages, 0)
+
+
+    const booksPopover = (
+        <Popover id="popover-basic">
+          <Popover.Header as="h3">Books</Popover.Header>
+          <Popover.Body>
+            <ul>
+                {books.map(book => {
+                    return <li>{book.title}: {book.author}</li>
+                })}
+            </ul>
+          </Popover.Body>
+        </Popover>
+      );
 
     return (
         <>
@@ -20,6 +39,11 @@ function ReadingStats({books}) {
                 <Card.Title align='center' className="title" style={{fontSize:"80px"}}>{books.length}</Card.Title>
                 <Card.Text align='center'><small className="text-muted">-</small></Card.Text>
                 <Card.Text align='center'>Books</Card.Text>
+                <Card.Text align='center'>
+                    <OverlayTrigger trigger="click" placement="right" overlay={booksPopover}>
+                        <Button variant="success">See book list</Button>
+                    </OverlayTrigger>
+                </Card.Text>
                 </Card.Body>
             </Card>
             <Card border='light'>

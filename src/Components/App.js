@@ -3,6 +3,8 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import BookCardContainer from './BookCardContainer';
 import NavBar from './NavBar';
+import ReadingStats from './ReadingStats';
+import NewBookForm from './NewBookForm';
 
 import { BrowserRouter, Route} from 'react-router-dom';
 
@@ -27,8 +29,14 @@ function App() {
     <div>
       <NavBar />
       <br></br>
-      <Route path="/">
+      <Route path="/home">
         <Home />
+      </Route>
+      <Route path="/readingstats">
+        <ReadingStats />
+      </Route>
+      <Route path="/newbookform">
+        <NewBookForm />
       </Route>
     </div>
   );

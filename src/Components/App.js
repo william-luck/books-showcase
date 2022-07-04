@@ -9,8 +9,10 @@ import Col from 'react-bootstrap/Col'
 
 function App() {
 
+  const [books, setBooks] = useState([])
+
   useEffect(() => {
-    fetch('http://localhost:3000/toys')
+    fetch('http://localhost:3000/books')
       .then(response => response.json())
       .then(src => console.log(src))
   }, [])

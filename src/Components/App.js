@@ -14,15 +14,20 @@ import { Route} from 'react-router-dom';
 function App() {
 
   const [books, setBooks] = useState([])
+  const [newBookAdded, setNewBookAdded] = useState(true)
 
   useEffect(() => {
     fetch('http://localhost:3000/books')
       .then(response => response.json())
       .then(src => setBooks(src))
-  }, [])
+  }, [newBookAdded])
+
+  function newBookToggle() {
+    setNewBookAdded(!newBookAdded)
+  }
 
 
-  
+
 
 
   return (
@@ -36,7 +41,7 @@ function App() {
         <ReadingStats books={books} />
       </Route>
       <Route path="/newbookform">
-        <NewBookForm />
+        <NewBookForm newBookToggle={newBookToggle}/>
       </Route>
     </div>
   );

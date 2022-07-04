@@ -14,7 +14,7 @@ import { Route} from 'react-router-dom';
 function App() {
 
   const [books, setBooks] = useState([])
-  const [newBookAdded, setNewBookAdded] = useState(true)
+  const [newBookAdded, setNewBookAdded] = useState([])
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -23,8 +23,9 @@ function App() {
       .then(src => setBooks(src))
   }, [newBookAdded])
 
-  function newBookToggle() {
-    setNewBookAdded(!newBookAdded)
+  function newBookToggle(newBook) {
+    setNewBookAdded(newBook)
+    console.log(newBook)
   }
 
 
@@ -36,7 +37,7 @@ function App() {
       <NavBar />
       <br></br>
       <Route path="/home">
-        <BookCardContainer books={books} show={show} setShow={setShow}/>
+        <BookCardContainer books={books} show={show} setShow={setShow} newBookAdded={newBookAdded}/>
       </Route>
       <Route path="/readingstats">
         <ReadingStats books={books} />

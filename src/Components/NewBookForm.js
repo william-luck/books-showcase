@@ -40,8 +40,7 @@ function NewBookForm({newBookToggle, setShow}) {
             body: JSON.stringify(formData)
         })
             .then(response => response.json())
-            .then(newItem => console.log(newItem))
-            .then(() => newBookToggle()) // will trigger useEffect on App again, to get new book rendered to the page on programmatic navigation
+            .then(newItem => newBookToggle(newItem)) // will trigger useEffect on App again, to get new book rendered to the page on programmatic navigation
             .then(() => setShow(true))
             .then(history.push('/home'))
 

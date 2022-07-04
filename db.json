@@ -142,17 +142,10 @@
     },
     {
       "title": "The Alchemist",
-      "image": "https://m.media-amazon.com/images/I/51Z0nLAfLmL.jpg",
       "author": "Paulo Coehlo",
       "pages": 154,
+      "image": "https://m.media-amazon.com/images/I/51Z0nLAfLmL.jpg",
       "id": 21
-    },
-    {
-      "title": "Test",
-      "author": "Test",
-      "pages": 200,
-      "image": "Test",
-      "id": 22
     }
   ]
 }

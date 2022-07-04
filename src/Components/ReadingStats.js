@@ -6,7 +6,10 @@ import CardGroup from 'react-bootstrap/CardGroup'
 import '../App.css';
 
 
-function ReadingStats() {
+function ReadingStats({books}) {
+
+    let pagesRead = books.reduce((previous, current) => previous + current.pages, 0)
+
     return (
         <>
             <Container>  
@@ -21,7 +24,7 @@ function ReadingStats() {
             </Card>
             <Card border='light'>
                 <Card.Body>
-                <Card.Title className="title" align='center' style={{fontSize:"80px"}}>4367</Card.Title>
+                <Card.Title className="title" align='center' style={{fontSize:"80px"}}>{pagesRead}</Card.Title>
                 <Card.Text align='center'><small className="text-muted">-</small></Card.Text>
                 <Card.Text align='center'>Pages</Card.Text>
                 </Card.Body>

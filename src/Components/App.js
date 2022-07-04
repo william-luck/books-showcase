@@ -6,7 +6,7 @@ import NavBar from './NavBar';
 import ReadingStats from './ReadingStats';
 import NewBookForm from './NewBookForm';
 
-import { BrowserRouter, Route} from 'react-router-dom';
+import { Route} from 'react-router-dom';
 
 
 
@@ -21,6 +21,7 @@ function App() {
       .then(src => setBooks(src))
   }, [])
 
+
   return (
     <div>
       <NavBar />
@@ -29,7 +30,7 @@ function App() {
         <BookCardContainer books={books} />
       </Route>
       <Route path="/readingstats">
-        <ReadingStats />
+        <ReadingStats books={books} />
       </Route>
       <Route path="/newbookform">
         <NewBookForm />

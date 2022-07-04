@@ -15,6 +15,7 @@ function App() {
 
   const [books, setBooks] = useState([])
   const [newBookAdded, setNewBookAdded] = useState(true)
+  const [show, setShow] = useState(true);
 
   useEffect(() => {
     fetch('http://localhost:3000/books')
@@ -35,7 +36,7 @@ function App() {
       <NavBar />
       <br></br>
       <Route path="/home">
-        <BookCardContainer books={books} />
+        <BookCardContainer books={books} show={show} setShow={setShow}/>
       </Route>
       <Route path="/readingstats">
         <ReadingStats books={books} />

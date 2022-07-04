@@ -43,6 +43,7 @@ function NewBookForm({newBookToggle}) {
             .then(newItem => console.log(newItem))
             .then(() => newBookToggle()) // will trigger useEffect on App again, to get new book rendered to the page on programmatic navigation
             .then(history.push('/home'))
+            .then()
 
 
     }

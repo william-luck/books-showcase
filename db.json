@@ -1,16 +1,25 @@
 {
-  "toys": [
+  "books": [
     {
       "id": 1,
-      "name": "Woody",
-      "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 8
+      "title": "Fifty Words for Rain",
+      "image": "https://m.media-amazon.com/images/I/41YBGxS-tCL.jpg",
+      "author": "Asha Lemmie",
+      "pages": 300
     },
     {
       "id": 2,
-      "name": "Buzz Lightyear",
-      "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-      "likes": 14
+      "title": "Intamacies",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81L+4dh4nEL.jpg",
+      "author": "Katie Kitamura",
+      "pages": 400
+    },
+    {
+      "id": 3,
+      "title": "Midnight Library",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81tCtHFtOgL.jpg",
+      "author": "Matt Haig",
+      "pages": 500
     }
   ]
 }

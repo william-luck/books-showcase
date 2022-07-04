@@ -2,6 +2,7 @@ import '../App.css';
 import React from 'react';
 import {useState, useEffect} from 'react';
 import BookCardContainer from './BookCardContainer';
+import NavBar from './NavBar';
 
 
 
@@ -18,7 +19,7 @@ function App() {
 
   return (
     <div>
-      <p>test</p>
+      <NavBar />
       <BookCardContainer books={books}/>
     </div>
   );

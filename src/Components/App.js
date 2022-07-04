@@ -21,16 +21,12 @@ function App() {
       .then(src => setBooks(src))
   }, [])
 
-  function Home() {
-    return <BookCardContainer books={books}/>
-  }
-
   return (
     <div>
       <NavBar />
       <br></br>
       <Route path="/home">
-        <Home />
+        <BookCardContainer books={books} />
       </Route>
       <Route path="/readingstats">
         <ReadingStats />

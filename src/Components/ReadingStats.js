@@ -29,6 +29,32 @@ function ReadingStats({books}) {
         </Popover>
       );
 
+      const pagesPopover = (
+        <Popover id="popover-basic">
+          <Popover.Header as="h3">Pages</Popover.Header>
+          <Popover.Body>
+            <ul>
+                {books.map(book => {
+                    return <li>{book.title}: {book.pages}</li>
+                })}
+            </ul>
+          </Popover.Body>
+        </Popover>
+      );
+
+      const hoursPopover = (
+        <Popover id="popover-basic">
+          <Popover.Header as="h3">Hours</Popover.Header>
+          <Popover.Body>
+            <ul>
+                {books.map(book => {
+                    return <li>{book.title}: {Math.trunc(book.pages*1.65/60)} hours</li>
+                })}
+            </ul>
+          </Popover.Body>
+        </Popover>
+      );
+
     return (
         <>
             <Container>  
@@ -40,8 +66,8 @@ function ReadingStats({books}) {
                 <Card.Text align='center'><small className="text-muted">-</small></Card.Text>
                 <Card.Text align='center'>Books</Card.Text>
                 <Card.Text align='center'>
-                    <OverlayTrigger trigger="click" placement="right" overlay={booksPopover}>
-                        <Button variant="success">See book list</Button>
+                    <OverlayTrigger trigger="click" placement="bottom" overlay={booksPopover}>
+                        <Button variant="success">See list</Button>
                     </OverlayTrigger>
                 </Card.Text>
                 </Card.Body>
@@ -51,13 +77,23 @@ function ReadingStats({books}) {
                 <Card.Title className="title" align='center' style={{fontSize:"80px"}}>{pagesRead}</Card.Title>
                 <Card.Text align='center'><small className="text-muted">-</small></Card.Text>
                 <Card.Text align='center'>Pages</Card.Text>
+                <Card.Text align='center'>
+                    <OverlayTrigger trigger="click" placement="bottom" overlay={pagesPopover}>
+                        <Button variant="success">See pages</Button>
+                    </OverlayTrigger>
+                </Card.Text>
                 </Card.Body>
             </Card>
             <Card border='light'>
                 <Card.Body>
-                <Card.Title align='center' className="title" style={{fontSize:"80px"}} >{Math.trunc((pagesRead*2)/60)}</Card.Title>
+                <Card.Title align='center' className="title" style={{fontSize:"80px"}} >{Math.trunc((pagesRead*1.65)/60)}</Card.Title>
                 <Card.Text align='center'><small className="text-muted">-</small></Card.Text>
                 <Card.Text align='center'>Hours</Card.Text>
+                <Card.Text align='center'>
+                    <OverlayTrigger trigger="click" placement="bottom" overlay={hoursPopover}>
+                        <Button variant="success">See hours</Button>
+                    </OverlayTrigger>
+                </Card.Text>
                 </Card.Body>
             </Card>
             </CardGroup>

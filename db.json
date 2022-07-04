@@ -5,21 +5,140 @@
       "title": "Fifty Words for Rain",
       "image": "https://m.media-amazon.com/images/I/41YBGxS-tCL.jpg",
       "author": "Asha Lemmie",
-      "pages": 300
+      "pages": 466
     },
     {
       "id": 2,
       "title": "Intamacies",
       "image": "https://images-na.ssl-images-amazon.com/images/I/81L+4dh4nEL.jpg",
       "author": "Katie Kitamura",
-      "pages": 400
+      "pages": 241
     },
     {
       "id": 3,
       "title": "Midnight Library",
       "image": "https://images-na.ssl-images-amazon.com/images/I/81tCtHFtOgL.jpg",
       "author": "Matt Haig",
-      "pages": 500
+      "pages": 308
+    },
+    {
+      "id": 4,
+      "title": "How Beautiful We Were",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/8112-anzl0L.jpg",
+      "author": "Imbolo Mbue",
+      "pages": 385
+    },
+    {
+      "id": 5,
+      "title": "Behold the Dreamers",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/91m0R4bUhQL.jpg",
+      "author": "Imbolo Mue",
+      "pages": 402
+    },
+    {
+      "id": 6,
+      "title": "Klara and the Sun",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/711cXHTd3+L.jpg",
+      "author": "Kazuo Ishiguro",
+      "pages": 273
+    },
+    {
+      "id": 7,
+      "title": "Sparks Like Stars",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81ojVLtMiLL.jpg",
+      "author": "Nadia Hashimi",
+      "pages": 476
+    },
+    {
+      "id": 8,
+      "title": "Where the Crawdads Sing",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81HA6TJ5K-L.jpg",
+      "author": "Delia Owens",
+      "pages": 386
+    },
+    {
+      "id": 9,
+      "title": "Educated",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81NwOj14S6L.jpg",
+      "author": "Tara Westover",
+      "pages": 364
+    },
+    {
+      "id": 10,
+      "title": "Migrations",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81dP8wpiF3L.jpg",
+      "author": "Charlotte McConaghy",
+      "pages": 273
+    },
+    {
+      "id": 11,
+      "title": "Sapiens",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71LMXL8DTjL.jpg",
+      "author": "Yuval Noah Harari",
+      "pages": 581
+    },
+    {
+      "id": 12,
+      "title": "A Knock at Midnight",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/9190R6rW9uL.jpg",
+      "author": "Brittany K. Barnett",
+      "pages": 351
+    },
+    {
+      "id": 13,
+      "title": "Atlas of the Heart",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/91DNhLLmUOL.jpg",
+      "author": "Brene Brown",
+      "pages": 337
+    },
+    {
+      "id": 14,
+      "title": "The 5AM Club",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71QmjMGNeoL.jpg",
+      "author": "Robin Sharma",
+      "pages": 383
+    },
+    {
+      "id": 15,
+      "title": "Brave New World",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81zE42gT3xL.jpg",
+      "author": "Aldous Huxley",
+      "pages": 184
+    },
+    {
+      "id": 16,
+      "title": "Clockwork Orange",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51FTcHNhQqL.jpg",
+      "author": "Anthony Burgess",
+      "pages": 101
+    },
+    {
+      "id": 17,
+      "title": "How to Prevent the Next Pandemic",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71ub5eus92L.jpg",
+      "author": "Bill Gates",
+      "pages": 284
+    },
+    {
+      "id": 18,
+      "title": "A Gentleman in Moscow",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/A1fs-ErenkL.jpg",
+      "author": "Amor Towles",
+      "pages": 482
+    },
+    {
+      "id": 19,
+      "title": "Rules of Civility",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/91R8gs3irXL.jpg",
+      "author": "Amor Towles",
+      "pages": 385
+    },
+    {
+      "id": 20,
+      "title": "The Lincoln Highway",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/91DUhtU6KCL.jpg",
+      "author": "Amor Towles",
+      "pages": 593
     }
   ]
 }

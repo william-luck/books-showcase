@@ -15,7 +15,7 @@ function App() {
 
   const [books, setBooks] = useState([])
   const [newBookAdded, setNewBookAdded] = useState(true)
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     fetch('http://localhost:3000/books')
@@ -42,7 +42,7 @@ function App() {
         <ReadingStats books={books} />
       </Route>
       <Route path="/newbookform">
-        <NewBookForm newBookToggle={newBookToggle}/>
+        <NewBookForm newBookToggle={newBookToggle} setShow={setShow}/>
       </Route>
     </div>
   );

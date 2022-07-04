@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Container } from "react-bootstrap";
 
-function NewBookForm({newBookToggle}) {
+function NewBookForm({newBookToggle, setShow}) {
 
     const history = useHistory();
 
@@ -42,8 +42,8 @@ function NewBookForm({newBookToggle}) {
             .then(response => response.json())
             .then(newItem => console.log(newItem))
             .then(() => newBookToggle()) // will trigger useEffect on App again, to get new book rendered to the page on programmatic navigation
+            .then(() => setShow(true))
             .then(history.push('/home'))
-            .then()
 
 
     }

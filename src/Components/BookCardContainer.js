@@ -1,6 +1,7 @@
 import React from "react";
 import BookCard from "./BookCard";
 
+import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -8,7 +9,8 @@ import Col from 'react-bootstrap/Col'
 function BookCardContainer({books}) {
     return (
         <div>
-            <Row xs={1} md={4} className="g-4">
+            <Container >
+            <Row xs={1} md={5} className="g-5">
             {books.map((book, idx,) => (
                 <Col>
                 <Card>
@@ -17,6 +19,7 @@ function BookCardContainer({books}) {
                 </Col>
             ))}
             </Row>
+            </Container>
         </div>
     )
 }

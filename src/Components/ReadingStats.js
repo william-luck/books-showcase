@@ -17,7 +17,7 @@ function ReadingStats({books}) {
             <CardGroup>
             <Card border='light'>
                 <Card.Body>
-                <Card.Title align='center' className="title" style={{fontSize:"80px"}}>20</Card.Title>
+                <Card.Title align='center' className="title" style={{fontSize:"80px"}}>{books.length}</Card.Title>
                 <Card.Text align='center'><small className="text-muted">-</small></Card.Text>
                 <Card.Text align='center'>Books</Card.Text>
                 </Card.Body>

@@ -1,10 +1,13 @@
 import {React, useState} from "react";
+import { useHistory } from "react-router-dom";
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Container } from "react-bootstrap";
 
 function NewBookForm() {
+
+    const history = useHistory();
 
     const [formData, setFormData] = useState({
         title: '',
@@ -37,7 +40,10 @@ function NewBookForm() {
             body: JSON.stringify(formData)
         })
             .then(response => response.json())
-            .then(newItem => console.log(newItem))
+            .then(newItem => {
+                console.log(newItem);
+                history.push('/home')
+            })
     }
 
 

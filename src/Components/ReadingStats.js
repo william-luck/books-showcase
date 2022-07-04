@@ -31,7 +31,7 @@ function ReadingStats({books}) {
             </Card>
             <Card border='light'>
                 <Card.Body>
-                <Card.Title align='center' className="title" style={{fontSize:"80px"}} >101</Card.Title>
+                <Card.Title align='center' className="title" style={{fontSize:"80px"}} >{Math.trunc((pagesRead*2)/60)}</Card.Title>
                 <Card.Text align='center'><small className="text-muted">-</small></Card.Text>
                 <Card.Text align='center'>Hours</Card.Text>
                 </Card.Body>

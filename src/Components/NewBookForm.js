@@ -14,7 +14,7 @@ function NewBookForm() {
     })
 
     function handleChange(event) {
-        if (event.target.name === 'pages') {
+        if (event.target.name === 'pages') { // Converts to integer if pages value changed
             setFormData({
                 ...formData,
                 [event.target.name]: parseInt(event.target.value)

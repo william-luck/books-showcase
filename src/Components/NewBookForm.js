@@ -6,13 +6,13 @@ import { Container } from "react-bootstrap";
 
 function NewBookForm() {
 
-    const [email, setEmail] = useState('')
+    const [title, setTitle] = useState('')
     const [author, setAuthor] = useState('')
     const [pages, setPages] = useState('')
     const [image, setImage] = useState('')
 
     function handleTitleChange(event) {
-        setEmail(event.target.value)
+        setTitle(event.target.value)
     }
 
     function handleAuthorChange(event) {
@@ -27,13 +27,36 @@ function NewBookForm() {
         setImage(event.target.value)
     }
 
+    function handleSubmit(event) {
+        event.preventDefault();
+
+        const newBook = {
+            title: title,
+            image: image,
+            author: author, 
+            pages: parseInt(pages)
+        }
+
+        fetch('http://localhost:3000/books', {
+            method: 'POST',
+            headers: {
+                "Content-Type": 'application/json',
+            },
+            body: JSON.stringify(newBook)
+        })
+            .then(response => response.json())
+            .then(newItem => console.log(newItem))
+        
+
+    }
+
 
     return (
         <Container>
-        <Form>
+        <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3">
                 <Form.Label>Book title</Form.Label>
-                <Form.Control placeholder="Enter book title" onChange={handleTitleChange} value={email}/>
+                <Form.Control placeholder="Enter book title" onChange={handleTitleChange} value={title}/>
             </Form.Group>
             <Form.Group className="mb-3">
                 <Form.Label>Author</Form.Label>

@@ -5,6 +5,9 @@ import BookCardContainer from './BookCardContainer';
 import NavBar from './NavBar';
 import ReadingStats from './ReadingStats';
 import NewBookForm from './NewBookForm';
+import FeaturedBooks from './FeaturedBooks';
+import CurrentlyReading from './CurrentlyReading';
+import { Container } from 'react-bootstrap';
 
 import { Route} from 'react-router-dom';
 
@@ -28,15 +31,21 @@ function App() {
     console.log(newBook)
   }
 
-
-
-
-
   return (
     <div>
       <NavBar />
       <br></br>
       <Route path="/home">
+        <Container>
+          
+          
+          <table>
+            <tr>
+              <td><FeaturedBooks /></td>
+              <td><CurrentlyReading /></td>
+            </tr>
+          </table>
+        </Container>
         <BookCardContainer books={books} show={show} setShow={setShow} newBookAdded={newBookAdded}/>
       </Route>
       <Route path="/readingstats">

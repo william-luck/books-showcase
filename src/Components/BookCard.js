@@ -1,10 +1,11 @@
 import React from "react";
+import { Badge } from "react-bootstrap";
 
 import Card from 'react-bootstrap/Card'
 
 function BookCard({book}) {
 
-    const {title, image, author, pages} = book
+    const {title, image, author, pages, read} = book
 
     return (
         <div>
@@ -15,6 +16,11 @@ function BookCard({book}) {
                     {author}
                 </Card.Text>
             </Card.Body>
+            <Card.Footer>
+                {read ? 
+                <Badge pill bg='success'>Finished</Badge> :
+                <Badge pill bg='warning'>Currently Reading</Badge>}
+            </Card.Footer>
         </div>
     )
 }

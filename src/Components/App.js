@@ -7,7 +7,7 @@ import ReadingStats from './ReadingStats';
 import NewBookForm from './NewBookForm';
 import FeaturedBooks from './FeaturedBooks';
 import CurrentlyReading from './CurrentlyReading';
-import { Container } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 
 import { Route} from 'react-router-dom';
 
@@ -37,12 +37,11 @@ function App() {
       <br></br>
       <Route path="/home">
         <Container>
-          <table>
-            <tr>
-              <td><FeaturedBooks /></td>
-              <td><CurrentlyReading /></td>
-            </tr>
-          </table>
+        <h3>Recommended</h3>
+        <Row>
+          <Col><FeaturedBooks /></Col>
+          <Col><CurrentlyReading /></Col>
+        </Row>
         </Container>
         <BookCardContainer books={books} show={show} setShow={setShow} newBookAdded={newBookAdded}/>
       </Route>

@@ -4,7 +4,6 @@ import Carousel from 'react-bootstrap/Carousel'
 function FeaturedBooks() {
     return (
         <>
-        <h3>Recommended</h3>
         <Carousel fade style={{maxWidth: '250px'}}>
             <Carousel.Item>
                 <img

@@ -37,8 +37,6 @@ function App() {
       <br></br>
       <Route path="/home">
         <Container>
-          
-          
           <table>
             <tr>
               <td><FeaturedBooks /></td>

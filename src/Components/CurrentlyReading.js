@@ -5,26 +5,21 @@ function CurrentlyReading() {
     return (
         <CardGroup>
   <Card>
-    <Card.Img variant="top" src="holder.js/100px160" />
-    <Card.Body>
-      <Card.Title>Card title</Card.Title>
-      <Card.Text>
-        This is a wider card with supporting text below as a natural lead-in to
-        additional content. This content is a little bit longer.
-      </Card.Text>
-    </Card.Body>
-    <Card.Footer>
-      <small className="text-muted">Last updated 3 mins ago</small>
-    </Card.Footer>
+    <Card.Img src="https://images-na.ssl-images-amazon.com/images/I/91DUhtU6KCL.jpg" alt="card image" />
+    {/* <Card.ImgOverlay>
+        <Card.Body></Card.Body>
+    <Card.ImgOverlay /> */}
   </Card>
+
   <Card>
-    <Card.Img variant="top" src="holder.js/100px160" />
     <Card.Body>
-      <Card.Title>Card title</Card.Title>
+      <Card.Title>Currently Reading</Card.Title>
       <Card.Text>
-        This card has supporting text below as a natural lead-in to additional
-        content.{' '}
+        Blank by blank
       </Card.Text>
+      <Card.Text>Progress Bar</Card.Text>
+      <Card.Text>Pages, hours</Card.Text>
+      <Card.Text>Add new pages read</Card.Text>
     </Card.Body>
     <Card.Footer>
       <small className="text-muted">Last updated 3 mins ago</small>

@@ -19,12 +19,17 @@ function App() {
   const [books, setBooks] = useState([])
   const [newBookAdded, setNewBookAdded] = useState([])
   const [show, setShow] = useState(false);
+  const [bookReading, setBookReading] = useState([])
 
   useEffect(() => {
     fetch('http://localhost:3000/books')
       .then(response => response.json())
-      .then(src => setBooks(src))
+      .then(src => {
+        setBooks(src)
+        setBookReading(src.find(book => !book.read)) // Returns first book in src where read is false (as in currently reading)
+      })
   }, [newBookAdded])
+
 
   function newBookToggle(newBook) {
     setNewBookAdded(newBook)
@@ -40,7 +45,7 @@ function App() {
         <h3>Recommended</h3>
         <Row>
           <Col><FeaturedBooks /></Col>
-          <Col><CurrentlyReading /></Col>
+          <Col><CurrentlyReading bookReading={bookReading} /></Col>
         </Row>
         </Container>
         <BookCardContainer books={books} show={show} setShow={setShow} newBookAdded={newBookAdded}/>

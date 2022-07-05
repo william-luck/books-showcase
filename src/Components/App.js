@@ -18,6 +18,7 @@ function App() {
 
   const [books, setBooks] = useState([])
   const [newBookAdded, setNewBookAdded] = useState([])
+  const [pageUpdate, setPageUpdate] = useState(false)
   const [show, setShow] = useState(false);
   const [bookReading, setBookReading] = useState([])
 
@@ -28,12 +29,16 @@ function App() {
         setBooks(src)
         setBookReading(src.find(book => !book.read)) // Returns first book in src where read is false (as in currently reading)
       })
-  }, [newBookAdded])
+  }, [newBookAdded, pageUpdate])
 
 
   function newBookToggle(newBook) {
     setNewBookAdded(newBook)
     console.log(newBook)
+  }
+
+  function newPageUpdate() {
+    setPageUpdate(!pageUpdate)
   }
 
   return (
@@ -45,7 +50,7 @@ function App() {
         <h3>Recommended</h3>
         <Row>
           <Col><FeaturedBooks /></Col>
-          <Col><CurrentlyReading bookReading={bookReading} /></Col>
+          <Col><CurrentlyReading bookReading={bookReading} newPageUpdate={newPageUpdate}/></Col>
         </Row>
         </Container>
         <BookCardContainer books={books} show={show} setShow={setShow} newBookAdded={newBookAdded}/>

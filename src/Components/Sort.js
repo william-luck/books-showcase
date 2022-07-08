@@ -1,24 +1,19 @@
 import React from "react";
-import { Dropdown } from "react-bootstrap";
+import { Dropdown, DropdownButton } from "react-bootstrap";
 
-function Sort() {
+function Sort({handleSort}) {
     return (
         <div style={{display:'inline-block'}
         }>
-        <Dropdown>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Sort by
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">All</Dropdown.Item>
-                <Dropdown.Item href="#/action-1">Title</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Author</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Genre</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Rating (high to low)</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Rating (low to high)</Dropdown.Item>
-            </Dropdown.Menu>
-        </Dropdown>
+        <DropdownButton id="dropdown-item-button" title="Sort by" onSelect={handleSort}>
+            <Dropdown.Item as="button" eventKey={'all'}>All</Dropdown.Item>
+            <Dropdown.Item as="button" eventKey={'title'}>Title</Dropdown.Item>
+            <Dropdown.Item as="button" eventKey={'author-first'}>Author (first name)</Dropdown.Item>
+            <Dropdown.Item as="button" eventKey={'author-last'}>Author (last name)</Dropdown.Item>
+            <Dropdown.Item as="button" eventKey={'genre'}>Genre</Dropdown.Item>
+            <Dropdown.Item as="button" eventKey={'rating-high-to-low'}>Rating (high to low)</Dropdown.Item>
+            <Dropdown.Item as="button" eventKey={'rating-low-to-high'}>Rating (low to high)</Dropdown.Item>
+        </DropdownButton>
         </div>
     )
 }

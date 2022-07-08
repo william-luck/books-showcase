@@ -10,9 +10,13 @@ import Col from 'react-bootstrap/Col'
 
 function BookCardContainer({books, show, setShow, newBookAdded}) {
 
-    const [sort, SetSort] = useState('rating-low-to-high')
+    const [sort, SetSort] = useState('all')
 
-    const booksToDisplay = [...books]
+    let booksToDisplay = [...books]
+
+    function handleSort(event) {
+        SetSort(event)
+    }
 
     if (sort === 'title') {
         booksToDisplay.sort((a, b) => { // cr
@@ -64,30 +68,16 @@ function BookCardContainer({books, show, setShow, newBookAdded}) {
         booksToDisplay.sort((a, b) => {
             return a.rating - b.rating
         })
+    } else {
+        booksToDisplay = [...books]
     }
-
-    // let testArray = [3,4,3,2,5,4,3,4]
-    // testArray.sort((a, b) => {
-    //     return a - b
-    // })
-    // console.log(testArray)
-
-
-    
-    
-    
-    
-
-
-
-
       
     return (
         <div>
             <Container >
             <AlertDismissible show={show} setShow={setShow} newBookAdded={newBookAdded}/>
             <div>
-            <h1 style={{display:'inline-block', width:'150px'}}>Library</h1><Sort />
+            <h1 style={{display:'inline-block', width:'150px'}}>Library</h1><Sort handleSort={handleSort} />
             </div>
             <Row xs={1} md={5} className="g-5">
             {booksToDisplay.map((book, idx,) => (

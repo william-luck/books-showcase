@@ -5,7 +5,7 @@ import { Rating } from "react-simple-star-rating";
 
 function BookCard({book}) {
 
-    const {id, title, image, author, pages, read, rating} = book
+    const {id, title, image, author, pages, read, rating, genre} = book
     const [starRating, setStarRating] = useState(rating*20) // Works in factor of 20
 
 
@@ -22,6 +22,7 @@ function BookCard({book}) {
         })
     }
 
+
     return (
         <div>
             <Card.Img variant="top" src={image} />
@@ -30,6 +31,7 @@ function BookCard({book}) {
                 <Card.Text>
                     {author}
                 </Card.Text>
+                <Badge bg='primary'>{genre}</Badge>
                 <Rating
                     onClick={handleRating}
                     ratingValue={starRating}

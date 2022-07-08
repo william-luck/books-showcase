@@ -1,6 +1,7 @@
 import {React, useState} from "react";
 import BookCard from "./BookCard";
 import AlertDismissible from "./AlertDismissible";
+import Sort from "./Sort";
 
 import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card'
@@ -13,7 +14,9 @@ function BookCardContainer({books, show, setShow, newBookAdded}) {
         <div>
             <Container >
             <AlertDismissible show={show} setShow={setShow} newBookAdded={newBookAdded}/>
-            <h1>Library</h1>
+            <div>
+            <h1 style={{display:'inline-block', width:'150px'}}>Library</h1><Sort />
+            </div>
             <Row xs={1} md={5} className="g-5">
             {books.map((book, idx,) => (
                 <Col>

@@ -48,11 +48,6 @@ function App() {
 
   return (
     <div>
-      {/* <StarRating 
-      defaultValue={5}
-      min={0}
-      max={10}
-      step={0.5} /> */}
       <NavBar />
       <br></br>
       <Route path="/home">

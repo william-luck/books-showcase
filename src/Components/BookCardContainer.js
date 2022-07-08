@@ -10,7 +10,7 @@ import Col from 'react-bootstrap/Col'
 
 function BookCardContainer({books, show, setShow, newBookAdded}) {
 
-    const [sort, SetSort] = useState('author')
+    const [sort, SetSort] = useState('author-first')
 
     const booksToDisplay = [...books]
 
@@ -24,10 +24,10 @@ function BookCardContainer({books, show, setShow, newBookAdded}) {
                 return 1
             }
         })
-    } else if (sort === 'author') {
+    } else if (sort === 'author-last') {
         booksToDisplay.sort((a, b) => {
-            let authorA = a.author.toLowerCase().split(' ')
-            authorA = authorA[authorA.length - 1]
+            let authorA = a.author.toLowerCase().split(' ') // Returns an array of each of the author's names
+            authorA = authorA[authorA.length - 1] // retrives the last name (the last element in the array)
             let authorB = b.author.toLowerCase().split(' ')
             authorB = authorB[authorB.length - 1]
             if (authorA < authorB) {
@@ -36,7 +36,19 @@ function BookCardContainer({books, show, setShow, newBookAdded}) {
                 return 1
             }
         })
+    } else if (sort === 'author-first') {
+        booksToDisplay.sort((a, b) => {
+            let authorA = a.author.toLowerCase();
+            let authorB = b.author.toLowerCase();
+            if (authorA < authorB) {
+                return -1
+            } else {
+                return 1
+            }
+        })
     }
+
+
     
     
     

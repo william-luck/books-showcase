@@ -11,8 +11,6 @@ import { Col, Container, Row } from 'react-bootstrap';
 
 import { Route} from 'react-router-dom';
 
-import StarRating from 'react-bootstrap-star-rating';
-
 
 
 
@@ -26,6 +24,8 @@ function App() {
   const [pageUpdate, setPageUpdate] = useState(false)
   const [show, setShow] = useState(false);
   const [bookReading, setBookReading] = useState([])
+
+
 
   useEffect(() => {
     fetch('http://localhost:3000/books')

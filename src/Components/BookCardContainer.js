@@ -9,6 +9,30 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 function BookCardContainer({books, show, setShow, newBookAdded}) {
+
+    const [sort, SetSort] = useState('all')
+
+    const booksToDisplay = [...books]
+
+    if (sort === 'title') {
+        booksToDisplay.sort((a, b) => {
+            let ta = a.title.toLowerCase();
+            let tb = b.title.toLowerCase();
+            if (ta < tb) {
+                return -1
+            } else {
+                return 1
+            }
+        })
+    }
+    
+    
+    
+    
+
+
+
+
       
     return (
         <div>
@@ -18,7 +42,7 @@ function BookCardContainer({books, show, setShow, newBookAdded}) {
             <h1 style={{display:'inline-block', width:'150px'}}>Library</h1><Sort />
             </div>
             <Row xs={1} md={5} className="g-5">
-            {books.map((book, idx,) => (
+            {booksToDisplay.map((book, idx,) => (
                 <Col>
                 <Card>
                     <BookCard book={book}/>

@@ -7,13 +7,16 @@ function Sort() {
         }>
         <Dropdown>
             <Dropdown.Toggle variant="success" id="dropdown-basic">
-                Dropdown Button
+                Sort by
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                <Dropdown.Item href="#/action-1">All</Dropdown.Item>
+                <Dropdown.Item href="#/action-1">Title</Dropdown.Item>
+                <Dropdown.Item href="#/action-2">Author</Dropdown.Item>
+                <Dropdown.Item href="#/action-3">Genre</Dropdown.Item>
+                <Dropdown.Item href="#/action-3">Rating (high to low)</Dropdown.Item>
+                <Dropdown.Item href="#/action-3">Rating (low to high)</Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
         </div>

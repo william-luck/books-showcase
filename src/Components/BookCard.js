@@ -5,13 +5,21 @@ import { Rating } from "react-simple-star-rating";
 
 function BookCard({book}) {
 
-    const {title, image, author, pages, read, rating} = book
-    const [starRating, setStarRating] = useState(rating*20) // initial rating value
+    const {id, title, image, author, pages, read, rating} = book
+    const [starRating, setStarRating] = useState(rating*20) // Works in factor of 20
 
 
     function handleRating(rate) {
         setStarRating(rate)
         console.log(rate)
+
+        fetch(`http://localhost:3000/books/${id}`, { // Updates rating in db.json
+            method: 'PATCH',
+            headers: {
+                'Content-Type': "application/json"
+            }, 
+            body: JSON.stringify({rating: rate/20})
+        })
     }
 
     return (

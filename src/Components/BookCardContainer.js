@@ -10,15 +10,27 @@ import Col from 'react-bootstrap/Col'
 
 function BookCardContainer({books, show, setShow, newBookAdded}) {
 
-    const [sort, SetSort] = useState('all')
+    const [sort, SetSort] = useState('author')
 
     const booksToDisplay = [...books]
 
     if (sort === 'title') {
         booksToDisplay.sort((a, b) => {
-            let ta = a.title.toLowerCase();
-            let tb = b.title.toLowerCase();
-            if (ta < tb) {
+            let titleA = a.title.toLowerCase();
+            let titleB = b.title.toLowerCase();
+            if (titleA < titleB) {
+                return -1
+            } else {
+                return 1
+            }
+        })
+    } else if (sort === 'author') {
+        booksToDisplay.sort((a, b) => {
+            let authorA = a.author.toLowerCase().split(' ')
+            authorA = authorA[authorA.length - 1]
+            let authorB = b.author.toLowerCase().split(' ')
+            authorB = authorB[authorB.length - 1]
+            if (authorA < authorB) {
                 return -1
             } else {
                 return 1

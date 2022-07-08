@@ -6,7 +6,8 @@
       "image": "https://m.media-amazon.com/images/I/41YBGxS-tCL.jpg",
       "author": "Asha Lemmie",
       "pages": 466,
-      "read": true
+      "read": true,
+      "rating": 4
     },
     {
       "id": 2,
@@ -14,7 +15,8 @@
       "image": "https://images-na.ssl-images-amazon.com/images/I/81L+4dh4nEL.jpg",
       "author": "Katie Kitamura",
       "pages": 241,
-      "read": true
+      "read": true,
+      "rating": 4
     },
     {
       "id": 3,
@@ -22,7 +24,8 @@
       "image": "https://images-na.ssl-images-amazon.com/images/I/81tCtHFtOgL.jpg",
       "author": "Matt Haig",
       "pages": 308,
-      "read": true
+      "read": true,
+      "rating": 5
     },
     {
       "id": 4,
@@ -30,7 +33,8 @@
       "image": "https://images-na.ssl-images-amazon.com/images/I/8112-anzl0L.jpg",
       "author": "Imbolo Mbue",
       "pages": 385,
-      "read": true
+      "read": true,
+      "rating": 5
     },
     {
       "id": 5,
@@ -38,7 +42,8 @@
       "image": "https://images-na.ssl-images-amazon.com/images/I/91m0R4bUhQL.jpg",
       "author": "Imbolo Mue",
       "pages": 402,
-      "read": true
+      "read": true,
+      "rating": 4
     },
     {
       "id": 6,
@@ -46,7 +51,8 @@
       "image": "https://images-na.ssl-images-amazon.com/images/I/711cXHTd3+L.jpg",
       "author": "Kazuo Ishiguro",
       "pages": 273,
-      "read": true
+      "read": true,
+      "rating": 4
     },
     {
       "id": 7,
@@ -54,7 +60,8 @@
       "image": "https://images-na.ssl-images-amazon.com/images/I/81ojVLtMiLL.jpg",
       "author": "Nadia Hashimi",
       "pages": 476,
-      "read": true
+      "read": true,
+      "rating": 4
     },
     {
       "id": 8,
@@ -62,7 +69,8 @@
       "image": "https://images-na.ssl-images-amazon.com/images/I/81HA6TJ5K-L.jpg",
       "author": "Delia Owens",
       "pages": 386,
-      "read": true
+      "read": true,
+      "rating": 5
     },
     {
       "id": 9,
@@ -70,7 +78,8 @@
       "image": "https://images-na.ssl-images-amazon.com/images/I/81NwOj14S6L.jpg",
       "author": "Tara Westover",
       "pages": 364,
-      "read": true
+      "read": true,
+      "rating": 5
     },
     {
       "id": 10,
@@ -78,7 +87,8 @@
       "image": "https://images-na.ssl-images-amazon.com/images/I/81dP8wpiF3L.jpg",
       "author": "Charlotte McConaghy",
       "pages": 273,
-      "read": true
+      "read": true,
+      "rating": 4
     },
     {
       "id": 11,
@@ -86,7 +96,8 @@
       "image": "https://images-na.ssl-images-amazon.com/images/I/71LMXL8DTjL.jpg",
       "author": "Yuval Noah Harari",
       "pages": 581,
-      "read": true
+      "read": true,
+      "rating": 3
     },
     {
       "id": 12,
@@ -94,7 +105,8 @@
       "image": "https://images-na.ssl-images-amazon.com/images/I/9190R6rW9uL.jpg",
       "author": "Brittany K. Barnett",
       "pages": 351,
-      "read": true
+      "read": true,
+      "rating": 5
     },
     {
       "id": 13,
@@ -102,7 +114,8 @@
       "image": "https://images-na.ssl-images-amazon.com/images/I/91DNhLLmUOL.jpg",
       "author": "Brene Brown",
       "pages": 337,
-      "read": true
+      "read": true,
+      "rating": 5
     },
     {
       "id": 14,
@@ -110,7 +123,8 @@
       "image": "https://images-na.ssl-images-amazon.com/images/I/71QmjMGNeoL.jpg",
       "author": "Robin Sharma",
       "pages": 383,
-      "read": true
+      "read": true,
+      "rating": 3
     },
     {
       "id": 15,
@@ -118,7 +132,8 @@
       "image": "https://images-na.ssl-images-amazon.com/images/I/81zE42gT3xL.jpg",
       "author": "Aldous Huxley",
       "pages": 184,
-      "read": true
+      "read": true,
+      "rating": 5
     },
     {
       "id": 16,
@@ -126,7 +141,8 @@
       "image": "https://images-na.ssl-images-amazon.com/images/I/51FTcHNhQqL.jpg",
       "author": "Anthony Burgess",
       "pages": 101,
-      "read": true
+      "read": true,
+      "rating": 2
     },
     {
       "id": 17,
@@ -134,7 +150,8 @@
       "image": "https://images-na.ssl-images-amazon.com/images/I/71ub5eus92L.jpg",
       "author": "Bill Gates",
       "pages": 284,
-      "read": true
+      "read": true,
+      "rating": 3
     },
     {
       "id": 18,
@@ -142,7 +159,8 @@
       "image": "https://images-na.ssl-images-amazon.com/images/I/A1fs-ErenkL.jpg",
       "author": "Amor Towles",
       "pages": 482,
-      "read": true
+      "read": true,
+      "rating": 5
     },
     {
       "id": 19,
@@ -150,7 +168,8 @@
       "image": "https://images-na.ssl-images-amazon.com/images/I/91R8gs3irXL.jpg",
       "author": "Amor Towles",
       "pages": 385,
-      "read": true
+      "read": true,
+      "rating": 4
     },
     {
       "id": 20,
@@ -159,7 +178,8 @@
       "author": "Amor Towles",
       "pages": 593,
       "pagesRead": 500,
-      "read": false
+      "read": false,
+      "rating": 0
     }
   ]
 }

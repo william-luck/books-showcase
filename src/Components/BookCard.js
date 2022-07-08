@@ -5,11 +5,13 @@ import { Rating } from "react-simple-star-rating";
 
 function BookCard({book}) {
 
-    const {title, image, author, pages, read} = book
-    const [rating, setRating] = useState(0) // initial rating value
+    const {title, image, author, pages, read, rating} = book
+    const [starRating, setStarRating] = useState(rating*20) // initial rating value
+
 
     function handleRating(rate) {
-        setRating(rate)
+        setStarRating(rate)
+        console.log(rate)
     }
 
     return (
@@ -22,13 +24,13 @@ function BookCard({book}) {
                 </Card.Text>
                 <Rating
                     onClick={handleRating}
-                    ratingValue={rating}
+                    ratingValue={starRating}
                     size={20}
                     label
                     transition
                     fillColor='orange'
                     emptyColor='gray'
-                    className='foo' // Will remove the inline style if applied
+                    className='foo' 
                 />
             </Card.Body>
             <Card.Footer>

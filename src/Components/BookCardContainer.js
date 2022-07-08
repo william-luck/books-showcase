@@ -10,12 +10,12 @@ import Col from 'react-bootstrap/Col'
 
 function BookCardContainer({books, show, setShow, newBookAdded}) {
 
-    const [sort, SetSort] = useState('author-first')
+    const [sort, SetSort] = useState('genre')
 
     const booksToDisplay = [...books]
 
     if (sort === 'title') {
-        booksToDisplay.sort((a, b) => {
+        booksToDisplay.sort((a, b) => { // cr
             let titleA = a.title.toLowerCase();
             let titleB = b.title.toLowerCase();
             if (titleA < titleB) {
@@ -36,7 +36,7 @@ function BookCardContainer({books, show, setShow, newBookAdded}) {
                 return 1
             }
         })
-    } else if (sort === 'author-first') {
+    } else if (sort === 'author-first') { // can refactor
         booksToDisplay.sort((a, b) => {
             let authorA = a.author.toLowerCase();
             let authorB = b.author.toLowerCase();
@@ -46,6 +46,17 @@ function BookCardContainer({books, show, setShow, newBookAdded}) {
                 return 1
             }
         })
+    } else if (sort === 'genre') { // cr
+        booksToDisplay.sort((a, b) => {
+            let genreA = a.genre.toLowerCase();
+            let genreB = b.genre.toLowerCase();
+            if (genreA < genreB) {
+                return -1
+            } else {
+                return 1
+            }
+        })
+
     }
 
 

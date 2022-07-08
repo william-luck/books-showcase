@@ -24,6 +24,7 @@ function App() {
   const [pageUpdate, setPageUpdate] = useState(false)
   const [show, setShow] = useState(false);
   const [bookReading, setBookReading] = useState([])
+  const [ratingChange, setRatingChange] = useState(true)
 
 
 
@@ -34,7 +35,7 @@ function App() {
         setBooks(src)
         setBookReading(src.find(book => !book.read)) // Returns first book in src where read is false (as in currently reading)
       })
-  }, [newBookAdded, pageUpdate]) 
+  }, [newBookAdded, pageUpdate, ratingChange]) 
 
 
   function newBookToggle(newBook) {
@@ -44,6 +45,10 @@ function App() {
 
   function newPageUpdate() {
     setPageUpdate(!pageUpdate)
+  }
+
+  function ratingToggle() {
+    setRatingChange(!ratingChange)
   }
 
   return (
@@ -58,7 +63,7 @@ function App() {
           <Col><CurrentlyReading bookReading={bookReading} newPageUpdate={newPageUpdate}/></Col>
         </Row>
         </Container>
-        <BookCardContainer books={books} show={show} setShow={setShow} newBookAdded={newBookAdded}/>
+        <BookCardContainer books={books} show={show} setShow={setShow} newBookAdded={newBookAdded} ratingToggle={ratingToggle}/>
       </Route>
       <Route path="/readingstats">
         <ReadingStats books={books} />

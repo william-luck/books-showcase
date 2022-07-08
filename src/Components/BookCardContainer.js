@@ -8,7 +8,7 @@ import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
-function BookCardContainer({books, show, setShow, newBookAdded}) {
+function BookCardContainer({books, show, setShow, newBookAdded, ratingToggle}) {
 
     const [sort, SetSort] = useState('all')
 
@@ -86,7 +86,7 @@ function BookCardContainer({books, show, setShow, newBookAdded}) {
             {booksToDisplay.map((book, idx,) => (
                 <Col>
                 <Card>
-                    <BookCard book={book}/>
+                    <BookCard book={book} ratingToggle={ratingToggle}/>
                 </Card>
                 </Col>
             ))}

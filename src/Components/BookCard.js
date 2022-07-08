@@ -6,7 +6,7 @@ import 'react-rater/lib/react-rater.css'
 
 
 
-function BookCard({book}) {
+function BookCard({book, ratingToggle}) {
 
     const {id, title, image, author, pages, read, stars, genre} = book
 
@@ -81,6 +81,7 @@ function BookCard({book}) {
             }, 
             body: JSON.stringify({stars: rating/20})
         })
+            .then(() => ratingToggle())
     }
 
 

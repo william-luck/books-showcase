@@ -7,7 +7,7 @@
       "author": "Asha Lemmie",
       "pages": 466,
       "read": true,
-      "rating": 4,
+      "stars": 4,
       "genre": "Fiction"
     },
     {
@@ -17,7 +17,7 @@
       "author": "Katie Kitamura",
       "pages": 241,
       "read": true,
-      "rating": 4,
+      "stars": 4,
       "genre": "Fiction"
     },
     {
@@ -27,7 +27,7 @@
       "author": "Matt Haig",
       "pages": 308,
       "read": true,
-      "rating": 5,
+      "stars": 5,
       "genre": "Fiction"
     },
     {
@@ -37,7 +37,7 @@
       "author": "Imbolo Mbue",
       "pages": 385,
       "read": true,
-      "rating": 5,
+      "stars": 5,
       "genre": "Fiction"
     },
     {
@@ -47,7 +47,7 @@
       "author": "Imbolo Mue",
       "pages": 402,
       "read": true,
-      "rating": 4,
+      "stars": 4,
       "genre": "Fiction"
     },
     {
@@ -57,7 +57,7 @@
       "author": "Kazuo Ishiguro",
       "pages": 273,
       "read": true,
-      "rating": 4,
+      "stars": 4,
       "genre": "Fiction"
     },
     {
@@ -67,7 +67,7 @@
       "author": "Nadia Hashimi",
       "pages": 476,
       "read": true,
-      "rating": 4,
+      "stars": 4,
       "genre": "Fiction"
     },
     {
@@ -77,7 +77,7 @@
       "author": "Delia Owens",
       "pages": 386,
       "read": true,
-      "rating": 5,
+      "stars": 5,
       "genre": "Fiction"
     },
     {
@@ -87,7 +87,7 @@
       "author": "Tara Westover",
       "pages": 364,
       "read": true,
-      "rating": 5,
+      "stars": 5,
       "genre": "Memoir"
     },
     {
@@ -97,7 +97,7 @@
       "author": "Charlotte McConaghy",
       "pages": 273,
       "read": true,
-      "rating": 4,
+      "stars": 4,
       "genre": "Fiction"
     },
     {
@@ -107,7 +107,7 @@
       "author": "Yuval Noah Harari",
       "pages": 581,
       "read": true,
-      "rating": 3,
+      "stars": 3,
       "genre": "Non-fiction"
     },
     {
@@ -117,7 +117,7 @@
       "author": "Brittany K. Barnett",
       "pages": 351,
       "read": true,
-      "rating": 5,
+      "stars": 5,
       "genre": "Memoir"
     },
     {
@@ -127,7 +127,7 @@
       "author": "Brene Brown",
       "pages": 337,
       "read": true,
-      "rating": 5,
+      "stars": 5,
       "genre": "Non-fiction"
     },
     {
@@ -137,7 +137,7 @@
       "author": "Robin Sharma",
       "pages": 383,
       "read": true,
-      "rating": 3,
+      "stars": 3,
       "genre": "Non-fiction"
     },
     {
@@ -147,7 +147,7 @@
       "author": "Aldous Huxley",
       "pages": 184,
       "read": true,
-      "rating": 5,
+      "stars": 5,
       "genre": "Fiction"
     },
     {
@@ -157,7 +157,7 @@
       "author": "Anthony Burgess",
       "pages": 101,
       "read": true,
-      "rating": 2,
+      "stars": 2,
       "genre": "Fiction"
     },
     {
@@ -167,7 +167,7 @@
       "author": "Bill Gates",
       "pages": 284,
       "read": true,
-      "rating": 3,
+      "stars": 3,
       "genre": "Non-fiction"
     },
     {
@@ -177,7 +177,7 @@
       "author": "Amor Towles",
       "pages": 482,
       "read": true,
-      "rating": 5,
+      "stars": 5,
       "genre": "Fiction"
     },
     {
@@ -187,7 +187,7 @@
       "author": "Amor Towles",
       "pages": 385,
       "read": true,
-      "rating": 4,
+      "stars": 4,
       "genre": "Fiction"
     },
     {
@@ -198,7 +198,7 @@
       "pages": 593,
       "pagesRead": 500,
       "read": false,
-      "rating": 4,
+      "stars": 4,
       "genre": "Fiction"
     }
   ]

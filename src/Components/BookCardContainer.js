@@ -62,15 +62,18 @@ function BookCardContainer({books, show, setShow, newBookAdded}) {
         })
     } else if (sort === 'rating-high-to-low') {
         booksToDisplay.sort((a, b) => {
-            return b.rating - a.rating
+            return b.stars - a.stars
         })
+        console.log(booksToDisplay)
     } else if (sort === 'rating-low-to-high') {
         booksToDisplay.sort((a, b) => {
-            return a.rating - b.rating
+            return a.stars - b.stars
         })
     } else {
         booksToDisplay = [...books]
     }
+
+
       
     return (
         <div>

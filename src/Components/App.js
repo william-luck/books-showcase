@@ -11,6 +11,11 @@ import { Col, Container, Row } from 'react-bootstrap';
 
 import { Route} from 'react-router-dom';
 
+import StarRating from 'react-bootstrap-star-rating';
+
+
+
+
 
 
 
@@ -29,7 +34,7 @@ function App() {
         setBooks(src)
         setBookReading(src.find(book => !book.read)) // Returns first book in src where read is false (as in currently reading)
       })
-  }, [newBookAdded, pageUpdate])
+  }, [newBookAdded, pageUpdate]) 
 
 
   function newBookToggle(newBook) {
@@ -43,6 +48,11 @@ function App() {
 
   return (
     <div>
+      {/* <StarRating 
+      defaultValue={5}
+      min={0}
+      max={10}
+      step={0.5} /> */}
       <NavBar />
       <br></br>
       <Route path="/home">

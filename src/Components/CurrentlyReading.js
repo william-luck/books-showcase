@@ -2,6 +2,7 @@ import {React, useState} from "react";
 import { Card, CardGroup, ProgressBar } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Accordion from 'react-bootstrap/Accordion'
 
 function CurrentlyReading({bookReading, newPageUpdate}) {
 
@@ -24,8 +25,8 @@ function CurrentlyReading({bookReading, newPageUpdate}) {
             body: JSON.stringify({pagesRead: parseInt(newPageCount)})
         })
             .then(response => response.json())
-            .then(() => newPageUpdate())
-            .then(() => setNewPageCount(''))
+            .then(() => newPageUpdate()) // to update state in app dependency array
+            .then(() => setNewPageCount('')) // resets form input to blank
     }
 
 
@@ -37,6 +38,7 @@ function CurrentlyReading({bookReading, newPageUpdate}) {
             <Card>
                 <Card.Img src={image} alt="card image" />
             </Card>
+
             <Card>
                 <Card.Body>
                     <Card.Title>Currently Reading</Card.Title>
@@ -44,15 +46,21 @@ function CurrentlyReading({bookReading, newPageUpdate}) {
                     <ProgressBar animated now={pagesRead/pages*100} />
                     <Card.Text><small>{pagesRead}/{pages} pages read</small></Card.Text>
 
-                    <Form onSubmit={handleSubmit}>
-                        <Form.Group className="mb-3">
-                            <Form.Label>Add new pages read</Form.Label>
-                            <Form.Control name='pages' value={newPageCount} onChange={handleChange}/>
-                        </Form.Group>
-                        <Button variant="primary" type="submit">
-                            Submit
-                        </Button>
-                    </Form>
+                    <Accordion>
+                        <Accordion.Item eventKey="0">
+                            <Accordion.Header>Add new page count</Accordion.Header>
+                            <Accordion.Body>
+                                <Form onSubmit={handleSubmit}>
+                                    <Form.Group className="mb-3">
+                                        <Form.Control name='pages' value={newPageCount} onChange={handleChange} placeholder='enter new page count..'/>
+                                    </Form.Group>
+                                    <Button variant="primary" type="submit">
+                                        Submit
+                                    </Button>
+                                </Form>
+                            </Accordion.Body>
+                        </Accordion.Item>
+                    </Accordion>
 
                 </Card.Body>
                 <Card.Footer>

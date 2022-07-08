@@ -1,8 +1,9 @@
-import React from "react";
+import {React, useState} from "react";
 import Carousel from 'react-bootstrap/Carousel'
 
 function FeaturedBooks() {
-    return (
+
+    return(
         <>
         <Carousel fade style={{maxWidth: '250px'}}>
             <Carousel.Item>

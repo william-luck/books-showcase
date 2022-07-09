@@ -13,7 +13,7 @@ function Search({ searchedTerm, setSearchedTerm, handleSort }) {
         <div style={{display:'inline-block'}}>
             <Form >
             <Form.Group className="mb-3">
-                <Form.Control placeholder="Search" name='title' value={searchedTerm} onChange={handleSearch}/>
+                <Form.Control placeholder="Search by author or title" value={searchedTerm} onChange={handleSearch}/>
             </Form.Group>
         </Form>
         </div>

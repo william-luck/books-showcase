@@ -23,7 +23,6 @@ function BookCardContainer({books, show, setShow, newBookAdded, ratingToggle}) {
         
     }
 
-    
     if (sort === 'title') {
         booksToDisplay.sort((a, b) => { // cr
             let titleA = a.title.toLowerCase();
@@ -96,10 +95,10 @@ function BookCardContainer({books, show, setShow, newBookAdded, ratingToggle}) {
     } else if (sort === 'rating-five-star') {
         booksToDisplay = books.filter(book => book.stars === 5)
         filteredRating = 'five'
-    } else if (sort === 'all') {
+    } else if (sort === 'all') { // will display all books by default
         booksToDisplay = [...books]
-    } else {
-        booksToDisplay = books.filter(book => book.title.includes(sort))
+    } else { // for searched terms
+        booksToDisplay = books.filter(book => book.title.includes(sort) || book.author.includes(sort))
     }
 
     return (

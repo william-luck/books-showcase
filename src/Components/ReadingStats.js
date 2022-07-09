@@ -13,7 +13,9 @@ import Button from 'react-bootstrap/Button'
 
 function ReadingStats({books}) {
 
-    let pagesRead = books.reduce((previous, current) => previous + current.pages, 0)
+
+    let booksRead = books.filter(book => book.read)
+    let pagesRead = booksRead.reduce((previous, current) => previous + current.pages, 0)
 
 
     const booksPopover = (
@@ -62,9 +64,11 @@ function ReadingStats({books}) {
             <CardGroup>
             <Card border='light'>
                 <Card.Body>
-                <Card.Title align='center' className="title" style={{fontSize:"80px"}}>{books.length}</Card.Title>
+                <Card.Title align='center' className="title" style={{fontSize:"80px"}}>
+                    {booksRead.length}
+                </Card.Title>
                 <Card.Text align='center'><small className="text-muted">-</small></Card.Text>
-                <Card.Text align='center'>Books</Card.Text>
+                <Card.Text align='center'>Books read</Card.Text>
                 <Card.Text align='center'>
                     <OverlayTrigger trigger="click" placement="bottom" overlay={booksPopover}>
                         <Button variant="success">See list</Button>

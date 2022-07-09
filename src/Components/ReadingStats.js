@@ -35,35 +35,48 @@ function ReadingStats({books}) {
         </Popover>
       );
 
-      const pagesPopover = (
-        <Popover id="popover-basic">
-          <Popover.Header as="h3">Pages</Popover.Header>
-          <Popover.Body>
-            <ul>
-                {books.map(book => {
-                    return <li>
-                        {/* {book.title}: {book.pages} */}
-                        {book.title}: {
-                            book.read ? book.pages : book.pagesRead + ' (in progress)' 
-                        }
-                        </li>
-                })}
-            </ul>
-          </Popover.Body>
-        </Popover>
-      );
+    const pagesPopover = (
+    <Popover id="popover-basic">
+        <Popover.Header as="h3">Pages</Popover.Header>
+        <Popover.Body>
+        <ul>
+            {books.map(book => {
+                return <li>
+                    {book.title}: {
+                        book.read ? book.pages : book.pagesRead + ' (in progress)' 
+                    }
+                    </li>
+            })}
+        </ul>
+        </Popover.Body>
+    </Popover>
+    );
 
-      const hoursPopover = (
+    const hoursPopover = (
+    <Popover id="popover-basic">
+        <Popover.Header as="h3">Hours</Popover.Header>
+        <Popover.Body>
+        <ul>
+            {books.map(book => {
+                return <li>{book.title}: {
+                    book.read ? Math.trunc(book.pages*1.65/60) : Math.trunc(book.pagesRead*1.65/60)
+                    } hours
+                    {book.read ? null : ' (in progress)'}</li>
+            })}
+        </ul>
+        </Popover.Body>
+    </Popover>
+    );
+
+    const fictionBooksPopover = (
         <Popover id="popover-basic">
-          <Popover.Header as="h3">Hours</Popover.Header>
+          <Popover.Header as="h3">FictionBooks</Popover.Header>
           <Popover.Body>
             <ul>
-                {books.map(book => {
-                    return <li>{book.title}: {
-                        book.read ? Math.trunc(book.pages*1.65/60) : Math.trunc(book.pagesRead*1.65/60)
-                        } hours
-                        {book.read ? null : ' (in progress)'}</li>
-                })}
+                {books.filter(book => book.genre === 'Fiction').map(book => {
+                    return <li>{book.title} {!book.read ? ' (currently reading)' : null}</li>
+                })
+                }
             </ul>
           </Popover.Body>
         </Popover>
@@ -125,11 +138,11 @@ function ReadingStats({books}) {
                 </Card.Title>
                 <Card.Text align='center'><small className="text-muted">-</small></Card.Text>
                 <Card.Text align='center'>Fiction books</Card.Text>
-                {/* <Card.Text align='center'>
-                    <OverlayTrigger trigger="click" placement="bottom" overlay={booksPopover}>
+                <Card.Text align='center'>
+                    <OverlayTrigger trigger="click" placement="bottom" overlay={fictionBooksPopover}>
                         <Button variant="success">See list</Button>
                     </OverlayTrigger>
-                </Card.Text> */}
+                </Card.Text>
                 </Card.Body>
             </Card>
             <Card border='light'>

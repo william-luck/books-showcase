@@ -70,8 +70,6 @@ function BookCard({book, ratingToggle}) {
     className='foo' 
     />
 
-    
-
     function handleRating(rating) {
 
         fetch(`http://localhost:3000/books/${id}`, { // Updates rating in db.json
@@ -83,9 +81,6 @@ function BookCard({book, ratingToggle}) {
         })
             .then(() => ratingToggle())
     }
-
-
-
 
     return (
         <div>

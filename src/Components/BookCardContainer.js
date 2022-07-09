@@ -7,6 +7,7 @@ import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Filter from "./Filter";
 
 function BookCardContainer({books, show, setShow, newBookAdded, ratingToggle}) {
 
@@ -80,7 +81,7 @@ function BookCardContainer({books, show, setShow, newBookAdded, ratingToggle}) {
             <Container >
             <AlertDismissible show={show} setShow={setShow} newBookAdded={newBookAdded}/>
             <div>
-            <h1 style={{display:'inline-block', width:'150px'}}>Library</h1><Sort handleSort={handleSort} />
+            <h1 style={{display:'inline-block', width:'150px'}}>Library</h1><Sort handleSort={handleSort} /> <Filter />
             </div>
             <Row xs={1} md={5} className="g-5">
             {booksToDisplay.map((book, idx,) => (

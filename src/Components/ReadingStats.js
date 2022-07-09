@@ -162,6 +162,54 @@ function ReadingStats({books}) {
             </Card>
             </CardGroup>
             </Container>
+
+            <Container>  
+                <br></br>      
+            <CardGroup>
+            <Card border='light'>
+                <Card.Body>
+                <Card.Title align='center' className="title" style={{fontSize:"80px"}}>
+                    {booksRead.filter(book => book.stars === 5).length}
+                </Card.Title>
+                <Card.Text align='center'><small className="text-muted">-</small></Card.Text>
+                <Card.Text align='center'>Books with five-star rating</Card.Text>
+                {/* <Card.Text align='center'>
+                    <OverlayTrigger trigger="click" placement="bottom" overlay={booksPopover}>
+                        <Button variant="success">See list</Button>
+                    </OverlayTrigger>
+                </Card.Text> */}
+                </Card.Body>
+            </Card>
+            <Card border='light'>
+                <Card.Body>
+                <Card.Title className="title" align='center' style={{fontSize:"80px"}}>
+                    {booksRead.filter(book => book.stars === 4).length}
+                </Card.Title>
+                <Card.Text align='center'><small className="text-muted">-</small></Card.Text>
+                <Card.Text align='center'>Books with four-star rating</Card.Text>
+                {/* <Card.Text align='center'>
+                    <OverlayTrigger trigger="click" placement="bottom" overlay={pagesPopover}>
+                        <Button variant="success">See pages</Button>
+                    </OverlayTrigger>
+                </Card.Text> */}
+                </Card.Body>
+            </Card>
+            <Card border='light'>
+                <Card.Body>
+                <Card.Title align='center' className="title" style={{fontSize:"80px"}}>
+                {booksRead.filter(book => book.stars <= 3).length}
+                </Card.Title>
+                <Card.Text align='center'><small className="text-muted">-</small></Card.Text>
+                <Card.Text align='center'>"Meh" books</Card.Text>
+                {/* <Card.Text align='center'>
+                    <OverlayTrigger trigger="click" placement="bottom" overlay={hoursPopover}>
+                        <Button variant="success">See hours</Button>
+                    </OverlayTrigger>
+                </Card.Text> */}
+                </Card.Body>
+            </Card>
+            </CardGroup>
+            </Container>
         </>
         
     )

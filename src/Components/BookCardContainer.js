@@ -108,7 +108,7 @@ function BookCardContainer({books, show, setShow, newBookAdded, ratingToggle}) {
             <div>
             <h1 style={{display:'inline-block', width:'150px'}}>Library</h1><Sort handleSort={handleSort} /> <Filter handleFilter={handleSort} />
             <Search searchedTerm={searchedTerm} setSearchedTerm={setSearchedTerm} handleSort={handleSort}/>
-            {booksToDisplay.length === 0 ? <p>None of your books are rated {filteredRating} stars</p> : null }
+            {booksToDisplay.length === 0 ? <p>No books match criteria </p> : null }
             </div>
             <Row xs={1} md={5} className="g-5">
             {booksToDisplay.map((book, idx,) => (

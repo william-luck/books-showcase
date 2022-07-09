@@ -19,7 +19,7 @@ function ReadingStats({books}) {
 
     if (!!bookCurrentlyReading) {
         pagesRead+=bookCurrentlyReading.pagesRead
-    }
+    } // will add pages to page total if there's a book being read
 
 
     const booksPopover = (
@@ -28,7 +28,7 @@ function ReadingStats({books}) {
           <Popover.Body>
             <ul>
                 {books.map(book => {
-                    return <li>{book.title}: {book.author}</li>
+                    return <li>{book.title}: {book.author} {!book.read ? '(not included, currently reading)' : null}</li>
                 })}
             </ul>
           </Popover.Body>
@@ -41,7 +41,12 @@ function ReadingStats({books}) {
           <Popover.Body>
             <ul>
                 {books.map(book => {
-                    return <li>{book.title}: {book.pages}</li>
+                    return <li>
+                        {/* {book.title}: {book.pages} */}
+                        {book.title}: {
+                            book.read ? book.pages : book.pagesRead + ' (in progress)' 
+                        }
+                        </li>
                 })}
             </ul>
           </Popover.Body>
@@ -54,7 +59,10 @@ function ReadingStats({books}) {
           <Popover.Body>
             <ul>
                 {books.map(book => {
-                    return <li>{book.title}: {Math.trunc(book.pages*1.65/60)} hours</li>
+                    return <li>{book.title}: {
+                        book.read ? Math.trunc(book.pages*1.65/60) : Math.trunc(book.pagesRead*1.65/60)
+                        } hours
+                        {book.read ? null : ' (in progress)'}</li>
                 })}
             </ul>
           </Popover.Body>
@@ -105,7 +113,6 @@ function ReadingStats({books}) {
                 </Card.Body>
             </Card>
             </CardGroup>
-            
             </Container>
         </>
         

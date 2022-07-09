@@ -1,4 +1,4 @@
-import {React, useState} from "react";
+import {React, useEffect, useState} from "react";
 import BookCard from "./BookCard";
 import AlertDismissible from "./AlertDismissible";
 import Sort from "./Sort";
@@ -14,6 +14,7 @@ function BookCardContainer({books, show, setShow, newBookAdded, ratingToggle}) {
     const [sort, SetSort] = useState('all')
 
     let booksToDisplay = [...books]
+    let filteredRating = ''
 
     function handleSort(event) {
         SetSort(event)
@@ -78,14 +79,19 @@ function BookCardContainer({books, show, setShow, newBookAdded, ratingToggle}) {
         booksToDisplay = books.filter(book => book.genre === 'Memoir')
     } else if (sort === 'rating-one-star') {
         booksToDisplay = books.filter(book => book.stars === 1)
+        filteredRating = 'one'
     } else if (sort === 'rating-two-star') {
         booksToDisplay = books.filter(book => book.stars === 2)
+        filteredRating = 'two'
     } else if (sort === 'rating-three-star') {
         booksToDisplay = books.filter(book => book.stars === 3)
+        filteredRating = 'three'
     } else if (sort === 'rating-four-star') {
         booksToDisplay = books.filter(book => book.stars === 4)
+        filteredRating = 'four'
     } else if (sort === 'rating-five-star') {
         booksToDisplay = books.filter(book => book.stars === 5)
+        filteredRating = 'five'
     } else {
         booksToDisplay = [...books]
     }
@@ -99,7 +105,8 @@ function BookCardContainer({books, show, setShow, newBookAdded, ratingToggle}) {
             <Container >
             <AlertDismissible show={show} setShow={setShow} newBookAdded={newBookAdded}/>
             <div>
-            <h1 style={{display:'inline-block', width:'150px'}}>Library</h1><Sort handleSort={handleSort} /> <Filter handleFilter={handleSort}/>
+            <h1 style={{display:'inline-block', width:'150px'}}>Library</h1><Sort handleSort={handleSort} /> <Filter handleFilter={handleSort} />
+            {booksToDisplay.length === 0 ? <p>None of your books are rated {filteredRating} stars</p> : null }
             </div>
             <Row xs={1} md={5} className="g-5">
             {booksToDisplay.map((book, idx,) => (
@@ -111,6 +118,8 @@ function BookCardContainer({books, show, setShow, newBookAdded, ratingToggle}) {
             ))}
             </Row>
             </Container>
+
+            
         </div>
     )
 }

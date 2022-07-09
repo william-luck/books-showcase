@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useEffect, useState} from "react";
 import Table from 'react-bootstrap/Table'
 import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card'
@@ -13,9 +13,13 @@ import Button from 'react-bootstrap/Button'
 
 function ReadingStats({books}) {
 
-
     let booksRead = books.filter(book => book.read)
+    let bookCurrentlyReading = (books.filter(book => !book.read))[0]
     let pagesRead = booksRead.reduce((previous, current) => previous + current.pages, 0)
+
+    if (!!bookCurrentlyReading) {
+        pagesRead+=bookCurrentlyReading.pagesRead
+    }
 
 
     const booksPopover = (

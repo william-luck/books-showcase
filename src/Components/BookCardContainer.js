@@ -70,9 +70,27 @@ function BookCardContainer({books, show, setShow, newBookAdded, ratingToggle}) {
         booksToDisplay.sort((a, b) => {
             return a.stars - b.stars
         })
+    } else if (sort === 'fiction') {
+        booksToDisplay = books.filter(book => book.genre === 'Fiction')
+    } else if (sort === 'non-fiction') {
+        booksToDisplay = books.filter(book => book.genre === 'Non-fiction')
+    } else if (sort === 'memoir') {
+        booksToDisplay = books.filter(book => book.genre === 'Memoir')
+    } else if (sort === 'rating-one-star') {
+        booksToDisplay = books.filter(book => book.stars === 1)
+    } else if (sort === 'rating-two-star') {
+        booksToDisplay = books.filter(book => book.stars === 2)
+    } else if (sort === 'rating-three-star') {
+        booksToDisplay = books.filter(book => book.stars === 3)
+    } else if (sort === 'rating-four-star') {
+        booksToDisplay = books.filter(book => book.stars === 4)
+    } else if (sort === 'rating-five-star') {
+        booksToDisplay = books.filter(book => book.stars === 5)
     } else {
         booksToDisplay = [...books]
     }
+
+    
 
 
       
@@ -81,7 +99,7 @@ function BookCardContainer({books, show, setShow, newBookAdded, ratingToggle}) {
             <Container >
             <AlertDismissible show={show} setShow={setShow} newBookAdded={newBookAdded}/>
             <div>
-            <h1 style={{display:'inline-block', width:'150px'}}>Library</h1><Sort handleSort={handleSort} /> <Filter />
+            <h1 style={{display:'inline-block', width:'150px'}}>Library</h1><Sort handleSort={handleSort} /> <Filter handleFilter={handleSort}/>
             </div>
             <Row xs={1} md={5} className="g-5">
             {booksToDisplay.map((book, idx,) => (

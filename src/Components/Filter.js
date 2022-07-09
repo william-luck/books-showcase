@@ -1,20 +1,22 @@
 import React from "react";
 import { Dropdown, DropdownButton } from "react-bootstrap";
 
-function Filter () {
+function Filter ({handleFilter}) {
+
+
     return (
         <div style={{display:'inline-block'}}>
-        <DropdownButton id="dropdown-item-button" title="Filter" >
+        <DropdownButton id="dropdown-item-button" title="Filter" onSelect={handleFilter}>
             <Dropdown.Item as="button" eventKey={'all'}>All</Dropdown.Item>
-            <Dropdown.Item as="button" eventKey={'title'}>Title</Dropdown.Item>
-            <Dropdown.Item as="button" eventKey={'author-first'}>Author (first name)</Dropdown.Item>
-            <Dropdown.Item as="button" eventKey={'author-last'}>Author (last name)</Dropdown.Item>
-            <Dropdown.Item as="button" eventKey={'genre'}>Genre</Dropdown.Item>
-            <Dropdown.Item as="button" eventKey={'rating-high-to-low'}>Rating (high to low)</Dropdown.Item>
-            <Dropdown.Item as="button" eventKey={'rating-low-to-high'}>Rating (low to high)</Dropdown.Item>
+            <Dropdown.Item as="button" eventKey={'fiction'}>Fiction</Dropdown.Item>
+            <Dropdown.Item as="button" eventKey={'non-fiction'}>Non-fiction</Dropdown.Item>
+            <Dropdown.Item as="button" eventKey={'memoir'}>Memoir</Dropdown.Item>
+            <Dropdown.Item as="button" eventKey={'rating-one-star'}>Rating: one star</Dropdown.Item>
+            <Dropdown.Item as="button" eventKey={'rating-two-star'}>Rating: two stars</Dropdown.Item>
+            <Dropdown.Item as="button" eventKey={'rating-three-star'}>Rating: three stars</Dropdown.Item>
+            <Dropdown.Item as="button" eventKey={'rating-four-star'}>Rating: four stars</Dropdown.Item>
+            <Dropdown.Item as="button" eventKey={'rating-five-star'}>Rating: five stars</Dropdown.Item>
         </DropdownButton>
-
-        {/* onSelect={handleSort} */}
         </div>
     )
 }

@@ -2,6 +2,7 @@ import {React, useEffect, useState} from "react";
 import BookCard from "./BookCard";
 import AlertDismissible from "./AlertDismissible";
 import Sort from "./Sort";
+import Search from "./Search";
 
 import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card'
@@ -106,6 +107,7 @@ function BookCardContainer({books, show, setShow, newBookAdded, ratingToggle}) {
             <AlertDismissible show={show} setShow={setShow} newBookAdded={newBookAdded}/>
             <div>
             <h1 style={{display:'inline-block', width:'150px'}}>Library</h1><Sort handleSort={handleSort} /> <Filter handleFilter={handleSort} />
+            <Search />
             {booksToDisplay.length === 0 ? <p>None of your books are rated {filteredRating} stars</p> : null }
             </div>
             <Row xs={1} md={5} className="g-5">

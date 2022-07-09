@@ -110,6 +110,48 @@ function ReadingStats({books}) {
         </Popover>
     );
 
+    const fiveStarPopover = (
+        <Popover id="popover-basic">
+          <Popover.Header as="h3">Five-star Books</Popover.Header>
+          <Popover.Body>
+            <ul>
+                {books.filter(book => book.stars === 5).map(book => {
+                    return <li>{book.title} {!book.read ? ' (currently reading)' : null}</li>
+                })
+                }
+            </ul>
+          </Popover.Body>
+        </Popover>
+    );
+
+    const fourStarPopover = (
+        <Popover id="popover-basic">
+          <Popover.Header as="h3">Four-star Books</Popover.Header>
+          <Popover.Body>
+            <ul>
+                {books.filter(book => book.stars === 4).map(book => {
+                    return <li>{book.title} {!book.read ? ' (currently reading)' : null}</li>
+                })
+                }
+            </ul>
+          </Popover.Body>
+        </Popover>
+    );
+
+    const mehPopover = (
+        <Popover id="popover-basic">
+          <Popover.Header as="h3">Meh</Popover.Header>
+          <Popover.Body>
+            <ul>
+                {books.filter(book => book.stars <= 3).map(book => {
+                    return <li>{book.title} {!book.read ? ' (currently reading)' : null}</li>
+                })
+                }
+            </ul>
+          </Popover.Body>
+        </Popover>
+    );
+
 
 
 
@@ -218,11 +260,11 @@ function ReadingStats({books}) {
                 </Card.Title>
                 <Card.Text align='center'><small className="text-muted">-</small></Card.Text>
                 <Card.Text align='center'>Books with five-star rating</Card.Text>
-                {/* <Card.Text align='center'>
-                    <OverlayTrigger trigger="click" placement="bottom" overlay={booksPopover}>
+                <Card.Text align='center'>
+                    <OverlayTrigger trigger="click" placement="top" overlay={fiveStarPopover}>
                         <Button variant="success">See list</Button>
                     </OverlayTrigger>
-                </Card.Text> */}
+                </Card.Text>
                 </Card.Body>
             </Card>
             <Card border='light'>
@@ -232,11 +274,11 @@ function ReadingStats({books}) {
                 </Card.Title>
                 <Card.Text align='center'><small className="text-muted">-</small></Card.Text>
                 <Card.Text align='center'>Books with four-star rating</Card.Text>
-                {/* <Card.Text align='center'>
-                    <OverlayTrigger trigger="click" placement="bottom" overlay={pagesPopover}>
-                        <Button variant="success">See pages</Button>
+                <Card.Text align='center'>
+                    <OverlayTrigger trigger="click" placement="top" overlay={fourStarPopover}>
+                        <Button variant="success">See list</Button>
                     </OverlayTrigger>
-                </Card.Text> */}
+                </Card.Text>
                 </Card.Body>
             </Card>
             <Card border='light'>
@@ -246,11 +288,11 @@ function ReadingStats({books}) {
                 </Card.Title>
                 <Card.Text align='center'><small className="text-muted">-</small></Card.Text>
                 <Card.Text align='center'>"Meh" books</Card.Text>
-                {/* <Card.Text align='center'>
-                    <OverlayTrigger trigger="click" placement="bottom" overlay={hoursPopover}>
-                        <Button variant="success">See hours</Button>
+                <Card.Text align='center'>
+                    <OverlayTrigger trigger="click" placement="top" overlay={mehPopover}>
+                        <Button variant="success">See list</Button>
                     </OverlayTrigger>
-                </Card.Text> */}
+                </Card.Text>
                 </Card.Body>
             </Card>
             </CardGroup>

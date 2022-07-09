@@ -2,11 +2,11 @@ import React from "react";
 
 import Form from 'react-bootstrap/Form';
 
-function Search({ searchedTerm, setSearchedTerm }) {
+function Search({ searchedTerm, setSearchedTerm, handleSort }) {
 
     function handleSearch (event) {
-        console.log(event.target.value)
         setSearchedTerm(event.target.value)
+        handleSort(event.target.value);
     }
 
     return (

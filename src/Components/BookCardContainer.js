@@ -13,15 +13,17 @@ import Filter from "./Filter";
 function BookCardContainer({books, show, setShow, newBookAdded, ratingToggle}) {
 
     const [sort, SetSort] = useState('all')
-    const [searchedTerm, setSearchedTerm] = useState('')
-
+    const [searchedTerm, setSearchedTerm] = useState('') // Need to keep this for controlled form
+    
     let booksToDisplay = [...books]
     let filteredRating = ''
 
-    function handleSort(event) {
-        SetSort(event)
+    function handleSort(sorted) {
+        SetSort(sorted)
+        
     }
 
+    
     if (sort === 'title') {
         booksToDisplay.sort((a, b) => { // cr
             let titleA = a.title.toLowerCase();
@@ -94,21 +96,19 @@ function BookCardContainer({books, show, setShow, newBookAdded, ratingToggle}) {
     } else if (sort === 'rating-five-star') {
         booksToDisplay = books.filter(book => book.stars === 5)
         filteredRating = 'five'
-    } else {
+    } else if (sort === 'all') {
         booksToDisplay = [...books]
+    } else {
+        booksToDisplay = books.filter(book => book.title.includes(sort))
     }
 
-    
-
-
-      
     return (
         <div>
             <Container >
             <AlertDismissible show={show} setShow={setShow} newBookAdded={newBookAdded}/>
             <div>
             <h1 style={{display:'inline-block', width:'150px'}}>Library</h1><Sort handleSort={handleSort} /> <Filter handleFilter={handleSort} />
-            <Search searchedTerm={searchedTerm} setSearchedTerm={setSearchedTerm}/>
+            <Search searchedTerm={searchedTerm} setSearchedTerm={setSearchedTerm} handleSort={handleSort}/>
             {booksToDisplay.length === 0 ? <p>None of your books are rated {filteredRating} stars</p> : null }
             </div>
             <Row xs={1} md={5} className="g-5">

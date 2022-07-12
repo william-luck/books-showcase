@@ -8,7 +8,7 @@ import 'react-rater/lib/react-rater.css'
 
 function BookCard({book, ratingToggle}) {
 
-    const {id, title, image, author, pages, read, stars, genre} = book
+    const {id, title, image, author, pages, read, stars, genre, wantToRead} = book
 
     const zeroStar = 
     <Rating
@@ -118,7 +118,10 @@ function BookCard({book, ratingToggle}) {
             <Card.Footer>
                 {read ? 
                 <Badge pill bg='success'>Finished</Badge> :
-                <Badge pill bg='warning'>Currently Reading</Badge>}
+                    (wantToRead ? <Badge bg="secondary">Want to Read</Badge> : 
+                        <Badge pill bg='warning'>Currently Reading</Badge>
+                    )
+                }
             </Card.Footer>
         </div>
     )

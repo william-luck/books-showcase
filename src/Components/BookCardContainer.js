@@ -95,6 +95,12 @@ function BookCardContainer({books, show, setShow, newBookAdded, ratingToggle}) {
     } else if (sort === 'rating-five-star') {
         booksToDisplay = books.filter(book => book.stars === 5)
         filteredRating = 'five'
+    } else if (sort === 'finished') {
+        booksToDisplay = books.filter(book => book.read)
+    } else if (sort === 'currently-reading') {
+        booksToDisplay = books.filter(book => book.pagesRead)
+    } else if (sort === 'want-to-read') {
+        booksToDisplay = books.filter(book => book.wantToRead)
     } else if (sort === 'all') { // will display all books by default
         booksToDisplay = [...books]
     } else { // for searched terms

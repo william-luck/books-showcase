@@ -16,6 +16,9 @@ function Filter ({handleFilter}) {
             <Dropdown.Item as="button" eventKey={'rating-three-star'}>Rating: three stars</Dropdown.Item>
             <Dropdown.Item as="button" eventKey={'rating-four-star'}>Rating: four stars</Dropdown.Item>
             <Dropdown.Item as="button" eventKey={'rating-five-star'}>Rating: five stars</Dropdown.Item>
+            <Dropdown.Item as="button" eventKey={'finished'}>Finshed</Dropdown.Item>
+            <Dropdown.Item as="button" eventKey={'currently-reading'}>Currently Reading</Dropdown.Item>
+            <Dropdown.Item as="button" eventKey={'want-to-read'}>Want to read</Dropdown.Item>
         </DropdownButton>
         </div>
     )

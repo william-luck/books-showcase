@@ -202,13 +202,13 @@
       "genre": "Fiction"
     },
     {
-      "title": "Test",
-      "author": "Test",
+      "title": "Currently reading book",
+      "author": "Biblo Luck",
       "pages": 500,
       "image": "test",
-      "pagesRead": 300,
-      "genre": "Fiction",
-      "stars": 3,
+      "pagesRead": 200,
+      "genre": "Memoir",
+      "stars": 0,
       "read": false,
       "id": 21
     }

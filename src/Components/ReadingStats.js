@@ -14,11 +14,15 @@ import Button from 'react-bootstrap/Button'
 function ReadingStats({books}) {
 
     let booksRead = books.filter(book => book.read)
-    let bookCurrentlyReading = (books.filter(book => !book.read))[0]
+    let booksCurrentlyReading = (books.filter(book => !book.read))
+    console.log(booksCurrentlyReading)
     let pagesRead = booksRead.reduce((previous, current) => previous + current.pages, 0)
 
-    if (!!bookCurrentlyReading) {
-        pagesRead+=bookCurrentlyReading.pagesRead
+    if (!!booksCurrentlyReading) {
+        let currentlyReadingPages = booksCurrentlyReading.reduce((previous, current) => previous + current.pagesRead, 0)
+        // pagesRead+=booksCurrentlyReading.
+        console.log(currentlyReadingPages)
+        pagesRead+=currentlyReadingPages
     } // will add pages to page total if there's a book being read
 
 

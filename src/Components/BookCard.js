@@ -10,6 +10,18 @@ function BookCard({book, ratingToggle}) {
 
     const {id, title, image, author, pages, read, stars, genre} = book
 
+    const zeroStar = 
+    <Rating
+    onClick={handleRating}
+    ratingValue={0}
+    size={20}
+    label
+    transition
+    fillColor='orange'
+    emptyColor='gray'
+    className='foo' 
+    />
+
     const oneStar = 
     <Rating
     onClick={handleRating}
@@ -94,7 +106,8 @@ function BookCard({book, ratingToggle}) {
                 {(stars === 5 ? fiveStar : // Workaround for buggy imported rating system
                     ((stars === 4 ? fourStar : 
                         ((stars === 3 ? threeStar : 
-                            ((stars === 2 ? twoStar : oneStar
+                            ((stars === 2 ? twoStar :
+                                ((stars === 1 ? oneStar : zeroStar))
                                 ))
                             ))
                         ))

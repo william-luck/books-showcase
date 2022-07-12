@@ -86,7 +86,8 @@ function NewBookForm({newBookToggle, setShow}) {
             <Form.Group className="mb-3">
                 <Form.Label>Rating</Form.Label>
                 <Form.Select onChange={handleChange} value={formData.stars} name="stars">
-                    <option>None</option>
+                    <option>Select..</option>
+                    <option>0</option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>

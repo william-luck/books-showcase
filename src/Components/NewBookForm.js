@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Container } from "react-bootstrap";
+import CurrentlyReading from "./CurrentlyReading";
 
 function NewBookForm({newBookToggle, setShow}) {
 
@@ -23,7 +24,24 @@ function NewBookForm({newBookToggle, setShow}) {
             setFormData({
                 ...formData,
                 [event.target.name]: parseInt(event.target.value)
-        })} else {
+        })} else if (event.target.name === 'read') {
+            if (event.target.value === 'Want to read') {
+                setFormData({
+                    ...formData,
+                    [event.target.name]: false,
+                    wantToRead: true
+                })
+            } else if (event.target.value === 'Currently Reading') {
+                setFormData({
+                    ...formData,
+                    [event.target.name]: false
+                })
+            } else {
+                setFormData({
+                    [event.target.value]: true
+                })
+            }
+        } else {
             setFormData({
                 ...formData,
                 [event.target.name]: event.target.value
@@ -95,6 +113,17 @@ function NewBookForm({newBookToggle, setShow}) {
                     <option>5</option>
                 </Form.Select>
             </Form.Group>
+
+            <Form.Group className="mb-3">
+                <Form.Label>Book Status</Form.Label>
+                <Form.Select onChange={handleChange} name="read">
+                    <option>Select..</option>
+                    <option>Want to read</option>
+                    <option>Currently Reading</option>
+                    <option>Finished</option>
+                </Form.Select>
+            </Form.Group>
+
             <Button variant="primary" type="submit">
                 Submit
             </Button>

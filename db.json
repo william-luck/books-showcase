@@ -202,13 +202,15 @@
       "genre": "Fiction"
     },
     {
-      "title": "Does this work",
-      "author": "yet",
-      "pages": 300,
-      "image": "what's gonna happen",
-      "stars": 3,
+      "title": "Book that I want to read",
+      "author": "Test",
+      "pages": 200,
+      "image": "Test",
       "genre": "Fiction",
-      "id": 24
+      "stars": 0,
+      "read": false,
+      "wantToRead": true,
+      "id": 21
     }
   ]
 }

@@ -200,14 +200,6 @@
       "read": false,
       "stars": 4,
       "genre": "Fiction"
-    },
-    {
-      "title": "Minecraft",
-      "author": "Lmao",
-      "pages": 200,
-      "image": "Test",
-      "genre": "Fiction",
-      "id": 21
     }
   ]
 }

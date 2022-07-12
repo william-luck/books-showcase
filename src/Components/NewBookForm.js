@@ -19,7 +19,7 @@ function NewBookForm({newBookToggle, setShow}) {
     function handleChange(event) {
         console.log('value', event.target.value)
         console.log('property', event.target.name)
-        if (event.target.name === 'pages') { // Converts to integer if pages value changed
+        if ((event.target.name === 'pages') || (event.target.name ==='stars')) { // Converts to integer if pages value changed
             setFormData({
                 ...formData,
                 [event.target.name]: parseInt(event.target.value)
@@ -57,18 +57,22 @@ function NewBookForm({newBookToggle, setShow}) {
                 <Form.Label>Book title</Form.Label>
                 <Form.Control placeholder="Enter book title" onChange={handleChange} value={formData.title} name='title'/>
             </Form.Group>
+
             <Form.Group className="mb-3">
                 <Form.Label>Author</Form.Label>
                 <Form.Control placeholder="Enter author name" onChange={handleChange} value={formData.author} name='author'/>
             </Form.Group>
+
             <Form.Group className="mb-3">
                 <Form.Label>Pages</Form.Label>
                 <Form.Control placeholder="Enter number of pages" onChange={handleChange} value={formData.pages} name='pages'/>
             </Form.Group>
+
             <Form.Group className="mb-3">
                 <Form.Label>Cover image</Form.Label>
                 <Form.Control placeholder="Enter an image url for the book cover" onChange={handleChange} value={formData.image} name='image'/>
             </Form.Group>
+
             <Form.Group className="mb-3">
                 <Form.Label>Genre</Form.Label>
                 <Form.Select onChange={handleChange} value={formData.genre} name="genre">
@@ -76,6 +80,18 @@ function NewBookForm({newBookToggle, setShow}) {
                     <option>Fiction</option>
                     <option>Non-fiction</option>
                     <option>Memoir</option>
+                </Form.Select>
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+                <Form.Label>Rating</Form.Label>
+                <Form.Select onChange={handleChange} value={formData.stars} name="stars">
+                    <option>None</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
                 </Form.Select>
             </Form.Group>
             <Button variant="primary" type="submit">

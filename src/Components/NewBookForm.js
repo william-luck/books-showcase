@@ -17,6 +17,8 @@ function NewBookForm({newBookToggle, setShow}) {
     })
 
     function handleChange(event) {
+        console.log('value', event.target.value)
+        console.log('property', event.target.name)
         if (event.target.name === 'pages') { // Converts to integer if pages value changed
             setFormData({
                 ...formData,
@@ -66,6 +68,15 @@ function NewBookForm({newBookToggle, setShow}) {
             <Form.Group className="mb-3">
                 <Form.Label>Cover image</Form.Label>
                 <Form.Control placeholder="Enter an image url for the book cover" onChange={handleChange} value={formData.image} name='image'/>
+            </Form.Group>
+            <Form.Group className="mb-3">
+                <Form.Label>Genre</Form.Label>
+                <Form.Select onChange={handleChange} value={formData.genre} name="genre">
+                    <option>Select..</option>
+                    <option>Fiction</option>
+                    <option>Non-fiction</option>
+                    <option>Memoir</option>
+                </Form.Select>
             </Form.Group>
             <Button variant="primary" type="submit">
                 Submit

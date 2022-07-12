@@ -270,7 +270,7 @@ function ReadingStats({books}) {
                 <Card.Text align='center'><small className="text-muted">-</small></Card.Text>
                 <Card.Text align='center'>"Meh" books</Card.Text>
                 <Card.Text align='center'>
-                    <OverlayTrigger trigger="click" placement="top" overlay={popovers.m}>
+                    <OverlayTrigger trigger="click" placement="top" overlay={popovers.meh}>
                         <Button variant="success">See list</Button>
                     </OverlayTrigger>
                 </Card.Text>

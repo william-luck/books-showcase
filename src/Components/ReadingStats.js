@@ -14,8 +14,7 @@ import Button from 'react-bootstrap/Button'
 function ReadingStats({books}) {
 
     let booksRead = books.filter(book => book.read)
-    let booksCurrentlyReading = (books.filter(book => !book.read))
-    console.log(booksCurrentlyReading)
+    let booksCurrentlyReading = (books.filter(book => book.pagesRead))
     let pagesRead = booksRead.reduce((previous, current) => previous + current.pages, 0)
 
     if (!!booksCurrentlyReading) {
@@ -32,7 +31,7 @@ function ReadingStats({books}) {
             <Popover.Header as="h3">Books</Popover.Header>
             <Popover.Body>
             <ul>
-                {books.map(book => {
+                {booksRead.map(book => {
                     return <li>{book.title}: {book.author} {!book.read ? '(not included, currently reading)' : null}</li>
                 })}
             </ul>
@@ -43,7 +42,7 @@ function ReadingStats({books}) {
             <Popover.Header as="h3">Pages</Popover.Header>
             <Popover.Body>
             <ul>
-                {books.map(book => {
+                {books.filter(book => book.read || book.pagesRead).map(book => {
                     return <li>
                         {book.title}: {
                             book.read ? book.pages : book.pagesRead + ' (in progress)' 
@@ -58,7 +57,7 @@ function ReadingStats({books}) {
             <Popover.Header as="h3">Hours</Popover.Header>
             <Popover.Body>
             <ul>
-                {books.map(book => {
+                {books.filter(book => book.read || book.pagesRead).map(book => {
                     return <li>{book.title}: {
                         book.read ? Math.trunc(book.pages*1.65/60) : Math.trunc(book.pagesRead*1.65/60)
                         } hours
@@ -72,7 +71,7 @@ function ReadingStats({books}) {
             <Popover.Header as="h3">Fiction Books</Popover.Header>
             <Popover.Body>
             <ul>
-                {books.filter(book => book.genre === 'Fiction').map(book => { // filters to obtain fiction books, then maps each book to overlay
+                {booksRead.filter(book => book.genre === 'Fiction').map(book => { // filters to obtain fiction books, then maps each book to overlay
                     return <li>{book.title} {!book.read ? ' (currently reading)' : null}</li>
                 })
                 }
@@ -84,7 +83,7 @@ function ReadingStats({books}) {
             <Popover.Header as="h3">Non-fiction Books</Popover.Header>
             <Popover.Body>
             <ul>
-                {books.filter(book => book.genre === 'Non-fiction').map(book => {
+                {booksRead.filter(book => book.genre === 'Non-fiction').map(book => {
                     return <li>{book.title} {!book.read ? ' (currently reading)' : null}</li>
                 })
                 }
@@ -96,7 +95,7 @@ function ReadingStats({books}) {
             <Popover.Header as="h3">Memoirs</Popover.Header>
             <Popover.Body>
             <ul>
-                {books.filter(book => book.genre === 'Memoir').map(book => {
+                {booksRead.filter(book => book.genre === 'Memoir').map(book => {
                     return <li>{book.title} {!book.read ? ' (currently reading)' : null}</li>
                 })
                 }
@@ -108,7 +107,7 @@ function ReadingStats({books}) {
             <Popover.Header as="h3">Five-star Books</Popover.Header>
             <Popover.Body>
             <ul>
-                {books.filter(book => book.stars === 5).map(book => {
+                {booksRead.filter(book => book.stars === 5).map(book => {
                     return <li>{book.title} {!book.read ? ' (currently reading)' : null}</li>
                 })
                 }
@@ -120,7 +119,7 @@ function ReadingStats({books}) {
             <Popover.Header as="h3">Four-star Books</Popover.Header>
             <Popover.Body>
             <ul>
-                {books.filter(book => book.stars === 4).map(book => {
+                {booksRead.filter(book => book.stars === 4).map(book => {
                     return <li>{book.title} {!book.read ? ' (currently reading)' : null}</li>
                 })
                 }
@@ -132,7 +131,7 @@ function ReadingStats({books}) {
             <Popover.Header as="h3">Meh</Popover.Header>
             <Popover.Body>
             <ul>
-                {books.filter(book => book.stars <= 3).map(book => {
+                {booksRead.filter(book => book.stars <= 3).map(book => {
                     return <li>{book.title} {!book.read ? ' (currently reading)' : null}</li>
                 })
                 }

@@ -211,6 +211,18 @@
       "stars": 0,
       "read": false,
       "id": 21
+    },
+    {
+      "title": "Really want to read book",
+      "author": "Biblo baggins",
+      "pages": 500,
+      "image": "test",
+      "pagesRead": 0,
+      "genre": "Memoir",
+      "stars": 0,
+      "read": false,
+      "wantToRead": true,
+      "id": 22
     }
   ]
 }

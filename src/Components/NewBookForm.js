@@ -14,13 +14,16 @@ function NewBookForm({newBookToggle, setShow}) {
         title: '',
         author: '', 
         pages: '',
-        image: ''
+        image: '',
+        pagesRead: ''
     })
+
+    const [currentlyReading, setCurrentlyReading] = useState(false)
 
     function handleChange(event) {
         console.log('value', event.target.value)
         console.log('property', event.target.name)
-        if ((event.target.name === 'pages') || (event.target.name ==='stars')) { // Converts to integer if pages value changed
+        if ((event.target.name === 'pages') || (event.target.name ==='stars') || (event.target.name === 'pagesRead')) { // Converts to integer if pages value changed
             setFormData({
                 ...formData,
                 [event.target.name]: parseInt(event.target.value)
@@ -29,6 +32,7 @@ function NewBookForm({newBookToggle, setShow}) {
                 setFormData({
                     ...formData,
                     [event.target.name]: false,
+                    pagesRead: 0,
                     wantToRead: true
                 })
             } else if (event.target.value === 'Currently Reading') {
@@ -36,6 +40,7 @@ function NewBookForm({newBookToggle, setShow}) {
                     ...formData,
                     [event.target.name]: false
                 })
+                setCurrentlyReading(true)
             } else {
                 setFormData({
                     [event.target.value]: true
@@ -124,9 +129,18 @@ function NewBookForm({newBookToggle, setShow}) {
                 </Form.Select>
             </Form.Group>
 
+            {currentlyReading ? (
+                <Form.Group className="mb-3">
+                <Form.Label>Pages Read</Form.Label>
+                <Form.Control placeholder="Enter page count" onChange={handleChange} value={formData.pagesRead} name='pagesRead'/>
+                </Form.Group>
+            ) : null }
+
             <Button variant="primary" type="submit">
                 Submit
             </Button>
+
+            
         </Form>
         </Container>
     )

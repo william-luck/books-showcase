@@ -202,14 +202,14 @@
       "genre": "Fiction"
     },
     {
-      "title": "Book that I want to read",
+      "title": "Test",
       "author": "Test",
-      "pages": 200,
-      "image": "Test",
+      "pages": 500,
+      "image": "test",
+      "pagesRead": 300,
       "genre": "Fiction",
-      "stars": 0,
+      "stars": 3,
       "read": false,
-      "wantToRead": true,
       "id": 21
     }
   ]

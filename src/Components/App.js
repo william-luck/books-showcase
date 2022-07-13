@@ -33,7 +33,7 @@ function App() {
       .then(response => response.json())
       .then(src => {
         setBooks(src)
-        setBookReading(src.find(book => !book.read)) // Returns first book in src where read is false (as in currently reading)
+        setBookReading(src.find(book => book.displayCurrentlyReading)) // Returns first book in src where read is false (as in currently reading)
       })
   }, [newBookAdded, pageUpdate, ratingChange]) 
 
@@ -63,7 +63,7 @@ function App() {
           <Col><CurrentlyReading bookReading={bookReading} newPageUpdate={newPageUpdate}/></Col>
         </Row>
         </Container>
-        <BookCardContainer books={books} show={show} setShow={setShow} newBookAdded={newBookAdded} ratingToggle={ratingToggle}/>
+        <BookCardContainer books={books} show={show} setShow={setShow} newBookAdded={newBookAdded} ratingToggle={ratingToggle} bookReading={bookReading} newPageUpdate={newPageUpdate}/>
       </Route>
       <Route path="/readingstats">
         <ReadingStats books={books} />

@@ -10,7 +10,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Filter from "./Filter";
 
-function BookCardContainer({books, show, setShow, newBookAdded, ratingToggle}) {
+function BookCardContainer({books, show, setShow, newBookAdded, ratingToggle, bookReading, newPageUpdate}) {
 
     const [sort, SetSort] = useState('all')
     const [searchedTerm, setSearchedTerm] = useState('') // Need to keep this for controlled form
@@ -120,7 +120,7 @@ function BookCardContainer({books, show, setShow, newBookAdded, ratingToggle}) {
             {booksToDisplay.map((book, idx,) => (
                 <Col>
                 <Card>
-                    <BookCard book={book} ratingToggle={ratingToggle}/>
+                    <BookCard book={book} ratingToggle={ratingToggle} bookReading={bookReading} newPageUpdate={newPageUpdate}/>
                 </Card>
                 </Col>
             ))}

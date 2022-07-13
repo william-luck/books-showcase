@@ -1,8 +1,9 @@
 import {React, useState} from "react";
-import { Card, CardGroup, ProgressBar } from "react-bootstrap";
+import { Card, CardGroup, CarouselItem, ProgressBar } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Accordion from 'react-bootstrap/Accordion'
+import Carousel from 'react-bootstrap/Carousel'
 
 function CurrentlyReading({bookReading, newPageUpdate}) {
 
@@ -28,10 +29,6 @@ function CurrentlyReading({bookReading, newPageUpdate}) {
             .then(() => newPageUpdate()) // to update state in app dependency array
             .then(() => setNewPageCount('')) // resets form input to blank
     }
-
-
-
-
 
     return (
         <CardGroup>

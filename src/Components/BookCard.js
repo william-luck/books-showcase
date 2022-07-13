@@ -149,7 +149,6 @@ function BookCard({book, ratingToggle, bookReading, newPageUpdate}) {
                 {currentlyReading ? 
                     <DropdownButton id="dropdown-item-button" title="" size='sm' style={{display: "inline-block"}} onSelect={handleDisplayCurrentlyReading}>
                     <Dropdown.Item as="button" eventKey={'display-in-currently-reading'}>Display in currently reading</Dropdown.Item>
-                    <Dropdown.Item as="button" eventKey={'mark-as-finished'}>Mark as finished </Dropdown.Item>
                     </DropdownButton>
                     : null}
                     {/* When clicked display in currently reading, I want to make a patch request to set the displayCurrentlyReading of the last book to false, then the current book to true */}

@@ -8,6 +8,7 @@ import NewBookForm from './NewBookForm';
 import FeaturedBooks from './FeaturedBooks';
 import CurrentlyReading from './CurrentlyReading';
 import { Col, Container, Row } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 
 import { Route} from 'react-router-dom';
 
@@ -78,7 +79,11 @@ function App() {
         <h3>Recommended</h3>
         <Row>
           <Col><FeaturedBooks /></Col>
-          <Col><CurrentlyReading bookReading={bookReading} newPageUpdate={newPageUpdate} handleMarkAsFinished={handleMarkAsFinished}/></Col>
+          <Col> {bookReading ? <CurrentlyReading bookReading={bookReading} newPageUpdate={newPageUpdate} handleMarkAsFinished={handleMarkAsFinished}/> 
+          : <Card>
+            <Card.Body><Card.Text>No books currently reading. Add a book to track</Card.Text></Card.Body>
+            </Card>}
+          </Col> 
         </Row>
         </Container>
         <BookCardContainer books={books} show={show} setShow={setShow} newBookAdded={newBookAdded} ratingToggle={ratingToggle} bookReading={bookReading} newPageUpdate={newPageUpdate}/>

@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Accordion from 'react-bootstrap/Accordion'
 import Carousel from 'react-bootstrap/Carousel'
 
-function CurrentlyReading({bookReading, newPageUpdate}) {
+function CurrentlyReading({bookReading, newPageUpdate, handleMarkAsFinished}) {
 
     const {id, title, image, author, pages, pagesRead, read} = bookReading
 
@@ -59,9 +59,11 @@ function CurrentlyReading({bookReading, newPageUpdate}) {
                         </Accordion.Item>
                     </Accordion>
 
+                    
+
                 </Card.Body>
                 <Card.Footer>
-                {/* <small className="text-muted">Last updated 3 mins ago</small> */}
+                <Button onClick={handleMarkAsFinished}>Mark as finished</Button>
                 </Card.Footer>
             </Card>
         </CardGroup>

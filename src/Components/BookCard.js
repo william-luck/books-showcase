@@ -99,27 +99,23 @@ function BookCard({book, ratingToggle, bookReading, newPageUpdate}) {
         console.log(eventKey)
         console.log(id)
         
-        if (eventKey === 'display-in-currently-reading') { // Changes property of book clicked
-        fetch(`http://localhost:3000/books/${id}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({displayCurrentlyReading: true})
-        })
-        fetch(`http://localhost:3000/books/${bookReading.id}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({displayCurrentlyReading: false})
-        })
-            .then(() => newPageUpdate())
+        if (eventKey === 'display-in-currently-reading') { 
+            fetch(`http://localhost:3000/books/${id}`, { // changes property of book that was cliked
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({displayCurrentlyReading: true})
+            })
+            fetch(`http://localhost:3000/books/${bookReading.id}`, { // changes property of book that was previously currentlyReading
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({displayCurrentlyReading: false})
+            })
+                .then(() => newPageUpdate())
         }
-
-
-        // make patch request using ID of book clicked, update displayCurrentlyReading to true
-        // How do I get the ID on the old book? These cards cannot communicate with one another, so I guess I can use the state in the App.js to get the ID of book currently. 
     }
 
     return (

@@ -51,6 +51,24 @@ function App() {
     setRatingChange(!ratingChange)
   }
 
+  function handleMarkAsFinished() {
+    console.log(bookReading)
+
+    fetch(`http://localhost:3000/books/${bookReading.id}`, {
+      method: 'PATCH',
+      headers: {
+        "Content-Type": 'application/json'
+      },
+      body: JSON.stringify({
+        read: true,
+        pagesRead: bookReading.pages,
+        currentlyReading: false,
+        displayCurrentlyReading: false
+      })
+    })
+      .then(() => newPageUpdate())
+  }
+
   return (
     <div>
       <NavBar />
@@ -60,7 +78,7 @@ function App() {
         <h3>Recommended</h3>
         <Row>
           <Col><FeaturedBooks /></Col>
-          <Col><CurrentlyReading bookReading={bookReading} newPageUpdate={newPageUpdate}/></Col>
+          <Col><CurrentlyReading bookReading={bookReading} newPageUpdate={newPageUpdate} handleMarkAsFinished={handleMarkAsFinished}/></Col>
         </Row>
         </Container>
         <BookCardContainer books={books} show={show} setShow={setShow} newBookAdded={newBookAdded} ratingToggle={ratingToggle} bookReading={bookReading} newPageUpdate={newPageUpdate}/>

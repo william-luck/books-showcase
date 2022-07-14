@@ -6,7 +6,7 @@ import Accordion from 'react-bootstrap/Accordion'
 import Carousel from 'react-bootstrap/Carousel'
 import FeaturedBooks from "./FeaturedBooks";
 
-function CurrentlyReading({bookReading, newPageUpdate, handleMarkAsFinished}) {
+function CurrentlyReading({bookReading, newPageUpdate, handleMarkAsFinished, favoriteBooks}) {
 
     const {id, title, image, author, pages, pagesRead, read} = bookReading
 
@@ -71,12 +71,12 @@ function CurrentlyReading({bookReading, newPageUpdate, handleMarkAsFinished}) {
             <Card>
                 <Card.Body>
                     <Card.Title>Favorite Books</Card.Title>
-                    <Card.Text>Test</Card.Text>
-                    <Card.Text>Test</Card.Text>
-                    <Card.Text>Test</Card.Text>
+                    {favoriteBooks.map(book => {
+                        return <ul><li><Card.Text><i>{book.title}</i> by {book.author}</Card.Text></li></ul>
+                    })}
                 </Card.Body>
             </Card>
-            <Card><FeaturedBooks></FeaturedBooks></Card>
+            <Card><FeaturedBooks favoriteBooks={favoriteBooks}></FeaturedBooks></Card>
         </CardGroup>
     )
 }

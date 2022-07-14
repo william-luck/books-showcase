@@ -78,7 +78,8 @@
       "pages": 386,
       "read": true,
       "stars": 5,
-      "genre": "Fiction"
+      "genre": "Fiction",
+      "favorite": true
     },
     {
       "id": 9,
@@ -88,7 +89,8 @@
       "pages": 364,
       "read": true,
       "stars": 5,
-      "genre": "Memoir"
+      "genre": "Memoir",
+      "favorite": true
     },
     {
       "id": 10,
@@ -178,7 +180,8 @@
       "pages": 482,
       "read": true,
       "stars": 5,
-      "genre": "Fiction"
+      "genre": "Fiction",
+      "favorite": true
     },
     {
       "id": 19,

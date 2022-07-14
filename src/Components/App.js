@@ -26,6 +26,7 @@ function App() {
   const [show, setShow] = useState(false);
   const [bookReading, setBookReading] = useState([])
   const [ratingChange, setRatingChange] = useState(true)
+  const [favoriteBooks, setFavoriteBooks] = useState([])
 
 
 
@@ -35,6 +36,7 @@ function App() {
       .then(src => {
         setBooks(src)
         setBookReading(src.find(book => book.displayCurrentlyReading)) // Returns first book in src where read is false (as in currently reading)
+        setFavoriteBooks(src.filter(book => book.favorite))
       })
   }, [newBookAdded, pageUpdate, ratingChange]) 
 
@@ -79,7 +81,7 @@ function App() {
         <Container>
         {/* <h3>Recommended</h3> */}
         <Row>
-          <Col md={12}> {bookReading ? <CurrentlyReading bookReading={bookReading} newPageUpdate={newPageUpdate} handleMarkAsFinished={handleMarkAsFinished}/> 
+          <Col md={12}> {bookReading ? <CurrentlyReading bookReading={bookReading} newPageUpdate={newPageUpdate} handleMarkAsFinished={handleMarkAsFinished} favoriteBooks={favoriteBooks}/> 
           : <Card>
             <Card.Body><Card.Text>No books currently reading. Add a book to track</Card.Text></Card.Body>
             </Card>}

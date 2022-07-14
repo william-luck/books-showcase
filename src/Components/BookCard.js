@@ -105,7 +105,7 @@ function BookCard({book, ratingToggle, bookReading, newPageUpdate}) {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({displayCurrentlyReading: true})
+                body: JSON.stringify({displayCurrentlyReading: true, currentlyReading: true, wantToRead: false})
             })
                 .then(() => newPageUpdate())
             fetch(`http://localhost:3000/books/${bookReading.id}`, { // changes property of book that was previously currentlyReading
@@ -125,6 +125,17 @@ function BookCard({book, ratingToggle, bookReading, newPageUpdate}) {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({currentlyReading: true, wantToRead: false})
+            })
+                .then(() => newPageUpdate())
+        }
+
+        if (eventKey === 'change-to-want-to-read') {
+            fetch(`http://localhost:3000/books/${id}`, { // 
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({currentlyReading: false, wantToRead: true, displayCurrentlyReading: false})
             })
                 .then(() => newPageUpdate())
         }
@@ -162,6 +173,7 @@ function BookCard({book, ratingToggle, bookReading, newPageUpdate}) {
                     <DropdownButton id="dropdown-item-button" title="" size='sm' style={{display: "inline-block"}} onSelect={handleDisplayCurrentlyReading}>
                     <Dropdown.Item as="button" eventKey={'display-in-currently-reading'}>Display in currently reading</Dropdown.Item>
                     {wantToRead ? <Dropdown.Item as='button' eventKey={'change-to-reading'}>Change to currently reading</Dropdown.Item> : null}
+                    {currentlyReading ? <Dropdown.Item as='button' eventKey={'change-to-want-to-read'}>Change to want to read</Dropdown.Item> : null}
                     </DropdownButton>
                     : null}
                     {/* When clicked display in currently reading, I want to make a patch request to set the displayCurrentlyReading of the last book to false, then the current book to true */}

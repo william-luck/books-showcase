@@ -201,7 +201,8 @@
       "stars": 4,
       "genre": "Fiction",
       "currentlyReading": true,
-      "displayCurrentlyReading": false
+      "displayCurrentlyReading": true,
+      "wantToRead": false
     },
     {
       "title": "Currently reading book",
@@ -212,9 +213,10 @@
       "genre": "Memoir",
       "stars": 0,
       "read": false,
-      "currentlyReading": true,
+      "currentlyReading": false,
       "displayCurrentlyReading": false,
-      "id": 21
+      "id": 21,
+      "wantToRead": true
     },
     {
       "title": "Really want to read book",
@@ -225,10 +227,10 @@
       "genre": "Memoir",
       "stars": 0,
       "read": false,
-      "currentlyReading": true,
-      "wantToRead": false,
+      "currentlyReading": false,
+      "wantToRead": true,
       "id": 22,
-      "displayCurrentlyReading": true
+      "displayCurrentlyReading": false
     }
   ]
 }

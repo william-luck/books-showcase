@@ -75,17 +75,20 @@ function App() {
       <NavBar />
       <br></br>
       <Route path="/home">
+
         <Container>
-        <h3>Recommended</h3>
+        {/* <h3>Recommended</h3> */}
         <Row>
-          <Col><FeaturedBooks /></Col>
-          <Col> {bookReading ? <CurrentlyReading bookReading={bookReading} newPageUpdate={newPageUpdate} handleMarkAsFinished={handleMarkAsFinished}/> 
+          <Col md={12}> {bookReading ? <CurrentlyReading bookReading={bookReading} newPageUpdate={newPageUpdate} handleMarkAsFinished={handleMarkAsFinished}/> 
           : <Card>
             <Card.Body><Card.Text>No books currently reading. Add a book to track</Card.Text></Card.Body>
             </Card>}
           </Col> 
+          {/* <Col md={{ offset: 2}}><FeaturedBooks /></Col> */}
         </Row>
         </Container>
+
+
         <BookCardContainer books={books} show={show} setShow={setShow} newBookAdded={newBookAdded} ratingToggle={ratingToggle} bookReading={bookReading} newPageUpdate={newPageUpdate}/>
       </Route>
       <Route path="/readingstats">

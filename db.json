@@ -213,10 +213,10 @@
       "genre": "Memoir",
       "stars": 0,
       "read": false,
-      "currentlyReading": false,
+      "currentlyReading": true,
       "displayCurrentlyReading": false,
       "id": 21,
-      "wantToRead": true
+      "wantToRead": false
     },
     {
       "title": "Really want to read book",
@@ -227,8 +227,8 @@
       "genre": "Memoir",
       "stars": 0,
       "read": false,
-      "currentlyReading": false,
-      "wantToRead": true,
+      "currentlyReading": true,
+      "wantToRead": false,
       "id": 22,
       "displayCurrentlyReading": false
     }

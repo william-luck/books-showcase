@@ -150,6 +150,17 @@ function BookCard({book, ratingToggle, bookReading, newPageUpdate}) {
             })
                 .then(() => newPageUpdate())
         }
+
+        if (eventKey === 'remove-from-favorites') {
+            fetch(`http://localhost:3000/books/${id}`, { // 
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({favorite: false})
+            })
+                .then(() => newPageUpdate())
+        }
     }
 
     return (
@@ -190,7 +201,9 @@ function BookCard({book, ratingToggle, bookReading, newPageUpdate}) {
                     {/* When clicked display in currently reading, I want to make a patch request to set the displayCurrentlyReading of the last book to false, then the current book to true */}
                 {read ? 
                     <DropdownButton id="dropdown-item-button" title="" size='sm' style={{float: 'right'}} onSelect={handleDisplayCurrentlyReading}>
-                    <Dropdown.Item as='button' eventKey={'add-to-favorites'}>Add to favorites</Dropdown.Item> 
+                    {!favorite ? 
+                        <Dropdown.Item as='button' eventKey={'add-to-favorites'}>Add to favorites</Dropdown.Item> 
+                        : <Dropdown.Item as='button' eventKey={'remove-from-favorites'}>Remove from favorites</Dropdown.Item> } 
                     </DropdownButton>
                 : null}
 

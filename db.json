@@ -9,7 +9,7 @@
       "read": true,
       "stars": 4,
       "genre": "Fiction",
-      "favorite": true
+      "favorite": false
     },
     {
       "id": 2,
@@ -29,7 +29,8 @@
       "pages": 308,
       "read": true,
       "stars": 5,
-      "genre": "Fiction"
+      "genre": "Fiction",
+      "favorite": false
     },
     {
       "id": 4,
@@ -101,7 +102,8 @@
       "pages": 273,
       "read": true,
       "stars": 4,
-      "genre": "Fiction"
+      "genre": "Fiction",
+      "favorite": true
     },
     {
       "id": 11,

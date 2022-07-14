@@ -197,10 +197,10 @@
       "author": "Amor Towles",
       "pages": 593,
       "pagesRead": 593,
-      "read": true,
+      "read": false,
       "stars": 4,
       "genre": "Fiction",
-      "currentlyReading": false,
+      "currentlyReading": true,
       "displayCurrentlyReading": false
     },
     {
@@ -211,8 +211,8 @@
       "pagesRead": 500,
       "genre": "Memoir",
       "stars": 0,
-      "read": true,
-      "currentlyReading": false,
+      "read": false,
+      "currentlyReading": true,
       "displayCurrentlyReading": false,
       "id": 21
     },
@@ -225,9 +225,10 @@
       "genre": "Memoir",
       "stars": 0,
       "read": false,
-      "currentlyReading": false,
-      "wantToRead": true,
-      "id": 22
+      "currentlyReading": true,
+      "wantToRead": false,
+      "id": 22,
+      "displayCurrentlyReading": true
     }
   ]
 }

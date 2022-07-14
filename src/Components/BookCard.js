@@ -107,12 +107,24 @@ function BookCard({book, ratingToggle, bookReading, newPageUpdate}) {
                 },
                 body: JSON.stringify({displayCurrentlyReading: true})
             })
+                .then(() => newPageUpdate())
             fetch(`http://localhost:3000/books/${bookReading.id}`, { // changes property of book that was previously currentlyReading
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({displayCurrentlyReading: false})
+            })
+                .then(() => newPageUpdate())
+        }
+
+        if (eventKey === 'change-to-reading') {
+            fetch(`http://localhost:3000/books/${id}`, { // changes to currently reading from want to read
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({currentlyReading: true, wantToRead: false})
             })
                 .then(() => newPageUpdate())
         }
@@ -146,9 +158,10 @@ function BookCard({book, ratingToggle, bookReading, newPageUpdate}) {
                         <Badge pill bg='warning'>Currently Reading</Badge>
                     )
                 }
-                {currentlyReading ? 
+                {currentlyReading || wantToRead ? 
                     <DropdownButton id="dropdown-item-button" title="" size='sm' style={{display: "inline-block"}} onSelect={handleDisplayCurrentlyReading}>
                     <Dropdown.Item as="button" eventKey={'display-in-currently-reading'}>Display in currently reading</Dropdown.Item>
+                    {wantToRead ? <Dropdown.Item as='button' eventKey={'change-to-reading'}>Change to currently reading</Dropdown.Item> : null}
                     </DropdownButton>
                     : null}
                     {/* When clicked display in currently reading, I want to make a patch request to set the displayCurrentlyReading of the last book to false, then the current book to true */}

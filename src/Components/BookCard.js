@@ -96,8 +96,6 @@ function BookCard({book, ratingToggle, bookReading, newPageUpdate}) {
     }
 
     function handleDisplayCurrentlyReading(eventKey) {
-        console.log(eventKey)
-        console.log(id)
         
         if (eventKey === 'display-in-currently-reading') { 
             fetch(`http://localhost:3000/books/${id}`, { // changes property of book that was cliked
@@ -116,20 +114,16 @@ function BookCard({book, ratingToggle, bookReading, newPageUpdate}) {
                 body: JSON.stringify({displayCurrentlyReading: false})
             })
                 .then(() => newPageUpdate())
-        }
-
-        if (eventKey === 'change-to-reading') {
+        } else if (eventKey === 'change-to-reading') {
             fetch(`http://localhost:3000/books/${id}`, { // changes to currently reading from want to read
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({currentlyReading: true, wantToRead: false})
+                body: JSON.stringify({currentlyReading: true, wantToRead: false, read: false})
             })
                 .then(() => newPageUpdate())
-        }
-
-        if (eventKey === 'change-to-want-to-read') {
+        } else if (eventKey === 'change-to-want-to-read') {
             fetch(`http://localhost:3000/books/${id}`, { // 
                 method: 'PATCH',
                 headers: {
@@ -138,9 +132,7 @@ function BookCard({book, ratingToggle, bookReading, newPageUpdate}) {
                 body: JSON.stringify({currentlyReading: false, wantToRead: true, displayCurrentlyReading: false})
             })
                 .then(() => newPageUpdate())
-        }
-
-        if (eventKey === 'add-to-favorites') {
+        } else if (eventKey === 'add-to-favorites') {
             fetch(`http://localhost:3000/books/${id}`, { // 
                 method: 'PATCH',
                 headers: {
@@ -149,9 +141,7 @@ function BookCard({book, ratingToggle, bookReading, newPageUpdate}) {
                 body: JSON.stringify({favorite: true})
             })
                 .then(() => newPageUpdate())
-        }
-
-        if (eventKey === 'remove-from-favorites') {
+        }else if (eventKey === 'remove-from-favorites') {
             fetch(`http://localhost:3000/books/${id}`, { // 
                 method: 'PATCH',
                 headers: {
@@ -193,7 +183,7 @@ function BookCard({book, ratingToggle, bookReading, newPageUpdate}) {
                 }
                 {currentlyReading || wantToRead ? 
                     <DropdownButton id="dropdown-item-button" title="" size='sm' style={{float: 'right'}} onSelect={handleDisplayCurrentlyReading}>
-                    <Dropdown.Item as="button" eventKey={'display-in-currently-reading'}>Display in currently reading</Dropdown.Item>
+                    {currentlyReading ? <Dropdown.Item as="button" eventKey={'display-in-currently-reading'}>Display in currently reading</Dropdown.Item> : null}
                     {wantToRead ? <Dropdown.Item as='button' eventKey={'change-to-reading'}>Change to currently reading</Dropdown.Item> : null}
                     {currentlyReading ? <Dropdown.Item as='button' eventKey={'change-to-want-to-read'}>Change to want to read</Dropdown.Item> : null}
                     </DropdownButton>
@@ -204,6 +194,7 @@ function BookCard({book, ratingToggle, bookReading, newPageUpdate}) {
                     {!favorite ? 
                         <Dropdown.Item as='button' eventKey={'add-to-favorites'}>Add to favorites</Dropdown.Item> 
                         : <Dropdown.Item as='button' eventKey={'remove-from-favorites'}>Remove from favorites</Dropdown.Item> } 
+                    <Dropdown.Item as='button' eventKey={'change-to-reading'}>Change to currently reading</Dropdown.Item>    
                     </DropdownButton>
                 : null}
 

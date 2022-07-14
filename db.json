@@ -103,7 +103,7 @@
       "read": true,
       "stars": 4,
       "genre": "Fiction",
-      "favorite": true
+      "favorite": false
     },
     {
       "id": 11,
@@ -194,7 +194,11 @@
       "pages": 385,
       "read": true,
       "stars": 4,
-      "genre": "Fiction"
+      "genre": "Fiction",
+      "currentlyReading": false,
+      "wantToRead": false,
+      "displayCurrentlyReading": false,
+      "pagesRead": 385
     },
     {
       "id": 20,
@@ -209,34 +213,6 @@
       "currentlyReading": true,
       "displayCurrentlyReading": true,
       "wantToRead": false
-    },
-    {
-      "title": "Currently reading book",
-      "author": "Biblo Luck",
-      "pages": 500,
-      "image": "https://images-na.ssl-images-amazon.com/images/I/91R8gs3irXL.jpg",
-      "pagesRead": 500,
-      "genre": "Memoir",
-      "stars": 0,
-      "read": false,
-      "currentlyReading": true,
-      "displayCurrentlyReading": false,
-      "id": 21,
-      "wantToRead": false
-    },
-    {
-      "title": "Really want to read book",
-      "author": "Biblo baggins",
-      "pages": 500,
-      "image": "test",
-      "pagesRead": 0,
-      "genre": "Memoir",
-      "stars": 0,
-      "read": false,
-      "currentlyReading": true,
-      "wantToRead": false,
-      "id": 22,
-      "displayCurrentlyReading": false
     }
   ]
 }

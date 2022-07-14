@@ -81,12 +81,19 @@ function App() {
         <Container>
         {/* <h3>Recommended</h3> */}
         <Row>
-          <Col md={12}> {bookReading ? <CurrentlyReading bookReading={bookReading} newPageUpdate={newPageUpdate} handleMarkAsFinished={handleMarkAsFinished} favoriteBooks={favoriteBooks}/> 
+          {/* <Col md={12}> {bookReading ? <CurrentlyReading bookReading={bookReading} newPageUpdate={newPageUpdate} handleMarkAsFinished={handleMarkAsFinished} favoriteBooks={favoriteBooks}/> 
           : <Card>
             <Card.Body><Card.Text>No books currently reading. Add a book to track</Card.Text></Card.Body>
             </Card>}
+          </Col>  */}
+
+          <Col md={12}>
+          <CurrentlyReading bookReading={bookReading} newPageUpdate={newPageUpdate} handleMarkAsFinished={handleMarkAsFinished} favoriteBooks={favoriteBooks}/> 
           </Col> 
-          {/* <Col md={{ offset: 2}}><FeaturedBooks /></Col> */}
+        
+
+
+
         </Row>
         </Container>
 

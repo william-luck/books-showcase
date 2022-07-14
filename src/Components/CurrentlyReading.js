@@ -8,7 +8,13 @@ import FeaturedBooks from "./FeaturedBooks";
 
 function CurrentlyReading({bookReading, newPageUpdate, handleMarkAsFinished, favoriteBooks}) {
 
-    const {id, title, image, author, pages, pagesRead, read} = bookReading
+    console.log(typeof bookReading)
+
+    
+    // const {id, title, image, author, pages, pagesRead, read} = bookReading
+    
+
+    
 
     const [newPageCount, setNewPageCount] = useState('')
 
@@ -19,7 +25,7 @@ function CurrentlyReading({bookReading, newPageUpdate, handleMarkAsFinished, fav
     function handleSubmit(event) {
         event.preventDefault();
 
-        fetch(`http://localhost:3000/books/${id}`, {
+        fetch(`http://localhost:3000/books/${bookReading.id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type' : 'application/json'
@@ -31,18 +37,34 @@ function CurrentlyReading({bookReading, newPageUpdate, handleMarkAsFinished, fav
             .then(() => setNewPageCount('')) // resets form input to blank
     }
 
+
     return (
         <CardGroup>
+
+            {(typeof bookReading) === 'undefined' ? 
+                <>
+                <Card>
+                <Card.Body><Card.Text>No books currently reading.</Card.Text></Card.Body>
+                </Card>
+
+                <Card>
+                <Card.Body><Card.Text>Add a book below</Card.Text></Card.Body>
+                </Card>
+                </>
+
+                : 
+
+                <>
             <Card>
-                <Card.Img src={image} alt="card image" />
+                <Card.Img src={bookReading.image} alt="card image" />
             </Card>
 
             <Card>
                 <Card.Body>
                     <Card.Title>Currently Reading</Card.Title>
-                    <Card.Text><i>{title}</i> by {author}</Card.Text>
-                    <ProgressBar animated now={pagesRead/pages*100} />
-                    <Card.Text><small>{pagesRead}/{pages} pages read</small></Card.Text>
+                    <Card.Text><i>{bookReading.title}</i> by {bookReading.author}</Card.Text>
+                    <ProgressBar animated now={bookReading.pagesRead/bookReading.pages*100} />
+                    <Card.Text><small>{bookReading.pagesRead}/{bookReading.pages} pages read</small></Card.Text>
 
                     <Accordion>
                         <Accordion.Item eventKey="0">
@@ -67,6 +89,8 @@ function CurrentlyReading({bookReading, newPageUpdate, handleMarkAsFinished, fav
                 <Button onClick={handleMarkAsFinished}>Mark as finished</Button>
                 </Card.Footer>
             </Card>
+            </>
+            }
 
             <Card>
                 <Card.Body>

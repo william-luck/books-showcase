@@ -98,7 +98,7 @@ function BookCardContainer({books, show, setShow, newBookAdded, ratingToggle, bo
     } else if (sort === 'finished') {
         booksToDisplay = books.filter(book => book.read)
     } else if (sort === 'currently-reading') {
-        booksToDisplay = books.filter(book => book.pagesRead)
+        booksToDisplay = books.filter(book => book.currentlyReading)
     } else if (sort === 'want-to-read') {
         booksToDisplay = books.filter(book => book.wantToRead)
     } else if (sort === 'all') { // will display all books by default

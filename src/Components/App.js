@@ -83,7 +83,7 @@ function App() {
     <div>
       <NavBar />
       <br></br>
-      <Route path="/home">
+      <Route exact path="/">
         <Container>
         {/* <h3>Recommended</h3> */}
         <AlertDismissible show={show} setShow={setShow} newBookAdded={newBookAdded} bookFinished={bookFinished} bookFinishedInfo={bookFinishedInfo}/>

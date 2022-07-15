@@ -299,36 +299,6 @@
       "displayCurrentlyReading": true,
       "wantToRead": false,
       "favorite": false
-    },
-    {
-      "title": "Test",
-      "author": "Test",
-      "pages": 500,
-      "image": "Test",
-      "pagesRead": 500,
-      "genre": "Fiction",
-      "stars": 1,
-      "read": false,
-      "currentlyReading": true,
-      "displayCurrentlyReading": true,
-      "wantToRead": false,
-      "favorite": false,
-      "id": 21
-    },
-    {
-      "title": "Test",
-      "author": "Test",
-      "pages": 500,
-      "image": "Test",
-      "pagesRead": 500,
-      "genre": "Non-fiction",
-      "stars": 1,
-      "read": false,
-      "currentlyReading": false,
-      "displayCurrentlyReading": true,
-      "wantToRead": false,
-      "favorite": false,
-      "id": 22
     }
   ]
 }

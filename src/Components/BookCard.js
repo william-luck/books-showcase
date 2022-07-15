@@ -105,14 +105,17 @@ function BookCard({book, ratingToggle, bookReading, newPageUpdate}) {
                 body: JSON.stringify({displayCurrentlyReading: true, currentlyReading: true, wantToRead: false})
             })
                 .then(() => newPageUpdate())
-            fetch(`http://localhost:3000/books/${bookReading.id}`, { // changes property of book that was previously currentlyReading
-                method: 'PATCH',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({displayCurrentlyReading: false})
-            })
-                .then(() => newPageUpdate())
+            if (typeof bookReading !== 'undefined') {
+                console.log(bookReading)
+                fetch(`http://localhost:3000/books/${bookReading.id}`, { // changes property of book that was previously currentlyReading
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({displayCurrentlyReading: false})
+                })
+                    .then(() => newPageUpdate())
+            }
         } else if (eventKey === 'change-to-reading') {
             fetch(`http://localhost:3000/books/${id}`, { // changes to currently reading from want to read
                 method: 'PATCH',

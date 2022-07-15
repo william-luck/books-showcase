@@ -42,7 +42,7 @@ function NewBookForm({newBookToggle, setShow}) {
                     ...formData,
                     read: false,
                     currentlyReading: true,
-                    displayCurrentlyReading: false, 
+                    displayCurrentlyReading: true, 
                     wantToRead: false,
                     favorite: false
                 })

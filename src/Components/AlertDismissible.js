@@ -10,7 +10,7 @@ function AlertDismissible({show, setShow, newBookAdded}) {
         <Alert show={show} variant="success">
             <Alert.Heading>New book added!</Alert.Heading>
             <p>
-            <i>{newBookAdded.title}</i> by {newBookAdded.author} has been added to your library and is now reflected in reading stats. 
+            <i>{newBookAdded.title}</i> by {newBookAdded.author} has been added to your library. 
             {/* Need a way to store the information of the last book, display title and author in alert, say that the new book has been reflected in the reading stats. */}
             </p>
             <hr />

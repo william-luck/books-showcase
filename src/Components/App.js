@@ -9,6 +9,7 @@ import FeaturedBooks from './FeaturedBooks';
 import CurrentlyReading from './CurrentlyReading';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Card } from 'react-bootstrap';
+import AlertDismissible from './AlertDismissible';
 
 import { Route} from 'react-router-dom';
 
@@ -77,9 +78,9 @@ function App() {
       <NavBar />
       <br></br>
       <Route path="/home">
-
         <Container>
         {/* <h3>Recommended</h3> */}
+        <AlertDismissible show={show} setShow={setShow} newBookAdded={newBookAdded}/>
         <Row>
           {/* <Col md={12}> {bookReading ? <CurrentlyReading bookReading={bookReading} newPageUpdate={newPageUpdate} handleMarkAsFinished={handleMarkAsFinished} favoriteBooks={favoriteBooks}/> 
           : <Card>

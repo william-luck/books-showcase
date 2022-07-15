@@ -110,7 +110,6 @@ function BookCardContainer({books, show, setShow, newBookAdded, ratingToggle, bo
     return (
         <div>
             <Container >
-            <AlertDismissible show={show} setShow={setShow} newBookAdded={newBookAdded}/>
             <div>
             <h1 style={{display:'inline-block', width:'150px'}}>Library</h1><Sort handleSort={handleSort} /> <Filter handleFilter={handleSort} />
             <Search searchedTerm={searchedTerm} setSearchedTerm={setSearchedTerm} handleSort={handleSort}/>

@@ -15,14 +15,14 @@ function ReadingStats({books}) {
 
     let booksRead = books.filter(book => book.read)
     let booksCurrentlyReading = (books.filter(book => book.pagesRead))
-    let pagesRead = booksRead.reduce((previous, current) => previous + current.pages, 0)
+    let pagesRead = books.reduce((previous, current) => previous + current.pagesRead, 0)
 
-    if (!!booksCurrentlyReading) {
-        let currentlyReadingPages = booksCurrentlyReading.reduce((previous, current) => previous + current.pagesRead, 0)
-        // pagesRead+=booksCurrentlyReading.
-        console.log(currentlyReadingPages)
-        pagesRead+=currentlyReadingPages
-    } // will add pages to page total if there's a book being read
+    // if (!!booksCurrentlyReading) {
+    //     let currentlyReadingPages = booksCurrentlyReading.reduce((previous, current) => previous + current.pagesRead, 0)
+    //     // pagesRead+=booksCurrentlyReading.
+    //     console.log(currentlyReadingPages)
+    //     pagesRead+=currentlyReadingPages
+    // } // will add pages to page total if there's a book being read
 
 
     const popovers = {

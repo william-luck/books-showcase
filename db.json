@@ -9,7 +9,11 @@
       "read": true,
       "stars": 4,
       "genre": "Fiction",
-      "favorite": false
+      "favorite": false,
+      "currentlyReading": false,
+      "wantToRead": false,
+      "displayCurrentlyReading": false,
+      "pagesRead": 466
     },
     {
       "id": 2,
@@ -19,7 +23,12 @@
       "pages": 241,
       "read": true,
       "stars": 4,
-      "genre": "Fiction"
+      "genre": "Fiction",
+      "currentlyReading": false,
+      "wantToRead": false,
+      "displayCurrentlyReading": false,
+      "pagesRead": 241,
+      "favorite": false
     },
     {
       "id": 3,
@@ -30,7 +39,11 @@
       "read": true,
       "stars": 5,
       "genre": "Fiction",
-      "favorite": false
+      "favorite": false,
+      "currentlyReading": false,
+      "wantToRead": false,
+      "displayCurrentlyReading": false,
+      "pagesRead": 308
     },
     {
       "id": 4,
@@ -40,7 +53,12 @@
       "pages": 385,
       "read": true,
       "stars": 5,
-      "genre": "Fiction"
+      "genre": "Fiction",
+      "currentlyReading": false,
+      "wantToRead": false,
+      "displayCurrentlyReading": false,
+      "pagesRead": 385,
+      "favorite": false
     },
     {
       "id": 5,
@@ -50,7 +68,12 @@
       "pages": 402,
       "read": true,
       "stars": 4,
-      "genre": "Fiction"
+      "genre": "Fiction",
+      "currentlyReading": false,
+      "wantToRead": false,
+      "displayCurrentlyReading": false,
+      "pagesRead": 402,
+      "favorite": false
     },
     {
       "id": 6,
@@ -60,7 +83,12 @@
       "pages": 273,
       "read": true,
       "stars": 4,
-      "genre": "Fiction"
+      "genre": "Fiction",
+      "currentlyReading": false,
+      "wantToRead": false,
+      "displayCurrentlyReading": false,
+      "pagesRead": 273,
+      "favorite": false
     },
     {
       "id": 7,
@@ -70,7 +98,12 @@
       "pages": 476,
       "read": true,
       "stars": 4,
-      "genre": "Fiction"
+      "genre": "Fiction",
+      "currentlyReading": false,
+      "wantToRead": false,
+      "displayCurrentlyReading": false,
+      "pagesRead": 476,
+      "favorite": false
     },
     {
       "id": 8,
@@ -81,7 +114,11 @@
       "read": true,
       "stars": 5,
       "genre": "Fiction",
-      "favorite": true
+      "favorite": true,
+      "currentlyReading": false,
+      "wantToRead": false,
+      "displayCurrentlyReading": false,
+      "pagesRead": 386
     },
     {
       "id": 9,
@@ -92,7 +129,11 @@
       "read": true,
       "stars": 5,
       "genre": "Memoir",
-      "favorite": true
+      "favorite": true,
+      "currentlyReading": false,
+      "wantToRead": false,
+      "displayCurrentlyReading": false,
+      "pagesRead": 364
     },
     {
       "id": 10,
@@ -103,7 +144,11 @@
       "read": true,
       "stars": 4,
       "genre": "Fiction",
-      "favorite": false
+      "favorite": false,
+      "currentlyReading": false,
+      "wantToRead": false,
+      "displayCurrentlyReading": false,
+      "pagesRead": 273
     },
     {
       "id": 11,
@@ -113,7 +158,12 @@
       "pages": 581,
       "read": true,
       "stars": 3,
-      "genre": "Non-fiction"
+      "genre": "Non-fiction",
+      "currentlyReading": false,
+      "wantToRead": false,
+      "displayCurrentlyReading": false,
+      "pagesRead": 581,
+      "favorite": false
     },
     {
       "id": 12,
@@ -123,7 +173,12 @@
       "pages": 351,
       "read": true,
       "stars": 5,
-      "genre": "Memoir"
+      "genre": "Memoir",
+      "currentlyReading": false,
+      "wantToRead": false,
+      "displayCurrentlyReading": false,
+      "pagesRead": 351,
+      "favorite": false
     },
     {
       "id": 13,
@@ -133,7 +188,12 @@
       "pages": 337,
       "read": true,
       "stars": 5,
-      "genre": "Non-fiction"
+      "genre": "Non-fiction",
+      "favorite": false,
+      "currentlyReading": false,
+      "wantToRead": false,
+      "displayCurrentlyReading": false,
+      "pagesRead": 337
     },
     {
       "id": 14,
@@ -143,7 +203,12 @@
       "pages": 383,
       "read": true,
       "stars": 3,
-      "genre": "Non-fiction"
+      "genre": "Non-fiction",
+      "currentlyReading": false,
+      "wantToRead": false,
+      "displayCurrentlyReading": false,
+      "pagesRead": 383,
+      "favorite": false
     },
     {
       "id": 15,
@@ -153,7 +218,12 @@
       "pages": 184,
       "read": true,
       "stars": 5,
-      "genre": "Fiction"
+      "genre": "Fiction",
+      "currentlyReading": false,
+      "wantToRead": false,
+      "displayCurrentlyReading": false,
+      "pagesRead": 184,
+      "favorite": false
     },
     {
       "id": 16,
@@ -163,7 +233,12 @@
       "pages": 101,
       "read": true,
       "stars": 2,
-      "genre": "Fiction"
+      "genre": "Fiction",
+      "currentlyReading": false,
+      "wantToRead": false,
+      "displayCurrentlyReading": false,
+      "pagesRead": 101,
+      "favorite": false
     },
     {
       "id": 17,
@@ -173,7 +248,12 @@
       "pages": 284,
       "read": true,
       "stars": 3,
-      "genre": "Non-fiction"
+      "genre": "Non-fiction",
+      "currentlyReading": false,
+      "wantToRead": false,
+      "displayCurrentlyReading": false,
+      "pagesRead": 284,
+      "favorite": false
     },
     {
       "id": 18,
@@ -184,7 +264,11 @@
       "read": true,
       "stars": 5,
       "genre": "Fiction",
-      "favorite": true
+      "favorite": true,
+      "currentlyReading": false,
+      "wantToRead": false,
+      "displayCurrentlyReading": false,
+      "pagesRead": 482
     },
     {
       "id": 19,
@@ -198,7 +282,8 @@
       "currentlyReading": false,
       "wantToRead": false,
       "displayCurrentlyReading": false,
-      "pagesRead": 385
+      "pagesRead": 385,
+      "favorite": false
     },
     {
       "id": 20,
@@ -206,13 +291,14 @@
       "image": "https://images-na.ssl-images-amazon.com/images/I/91DUhtU6KCL.jpg",
       "author": "Amor Towles",
       "pages": 593,
-      "pagesRead": 593,
+      "pagesRead": 200,
       "read": false,
       "stars": 4,
       "genre": "Fiction",
       "currentlyReading": true,
       "displayCurrentlyReading": true,
-      "wantToRead": false
+      "wantToRead": false,
+      "favorite": false
     }
   ]
 }

@@ -5,10 +5,8 @@ import BookCardContainer from './BookCardContainer';
 import NavBar from './NavBar';
 import ReadingStats from './ReadingStats';
 import NewBookForm from './NewBookForm';
-import FeaturedBooks from './FeaturedBooks';
 import CurrentlyReading from './CurrentlyReading';
 import { Col, Container, Row } from 'react-bootstrap';
-import { Card } from 'react-bootstrap';
 import AlertDismissible from './AlertDismissible';
 
 import { Route} from 'react-router-dom';
@@ -39,7 +37,7 @@ function App() {
       .then(response => response.json())
       .then(src => {
         setBooks(src)
-        setBookReading(src.find(book => book.displayCurrentlyReading)) // Returns first book in src where read is false (as in currently reading)
+        setBookReading(src.find(book => book.displayCurrentlyReading)) 
         setFavoriteBooks(src.filter(book => book.favorite))
       })
   }, [newBookAdded, pageUpdate, ratingChange]) 
@@ -85,27 +83,17 @@ function App() {
       <br></br>
       <Route exact path="/">
         <Container>
-        {/* <h3>Recommended</h3> */}
         <AlertDismissible show={show} setShow={setShow} newBookAdded={newBookAdded} bookFinished={bookFinished} bookFinishedInfo={bookFinishedInfo}/>
-        <Row>
-          {/* <Col md={12}> {bookReading ? <CurrentlyReading bookReading={bookReading} newPageUpdate={newPageUpdate} handleMarkAsFinished={handleMarkAsFinished} favoriteBooks={favoriteBooks}/> 
-          : <Card>
-            <Card.Body><Card.Text>No books currently reading. Add a book to track</Card.Text></Card.Body>
-            </Card>}
-          </Col>  */}
 
+        <Row>
           <Col md={12}>
           <CurrentlyReading bookReading={bookReading} newPageUpdate={newPageUpdate} handleMarkAsFinished={handleMarkAsFinished} favoriteBooks={favoriteBooks}/> 
           </Col> 
-        
-
-
-
         </Row>
         </Container>
 
 
-        <BookCardContainer books={books} show={show} setShow={setShow} newBookAdded={newBookAdded} ratingToggle={ratingToggle} bookReading={bookReading} newPageUpdate={newPageUpdate}/>
+        <BookCardContainer books={books} ratingToggle={ratingToggle} bookReading={bookReading} newPageUpdate={newPageUpdate}/>
       </Route>
       <Route path="/readingstats">
         <ReadingStats books={books} />

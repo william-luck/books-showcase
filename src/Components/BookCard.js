@@ -1,4 +1,4 @@
-import {React, useEffect, useState} from "react";
+import React from "react";
 import { Badge } from "react-bootstrap";
 import Card from 'react-bootstrap/Card'
 import { Rating } from "react-simple-star-rating";
@@ -9,7 +9,7 @@ import { Dropdown, DropdownButton } from "react-bootstrap";
 
 function BookCard({book, ratingToggle, bookReading, newPageUpdate}) {
 
-    const {id, title, image, author, pages, read, stars, genre, wantToRead, pagesRead, currentlyReading, favorite} = book
+    const {id, title, image, author, read, stars, genre, wantToRead, currentlyReading, favorite} = book
 
     const zeroStar = 
     <Rating
@@ -85,7 +85,7 @@ function BookCard({book, ratingToggle, bookReading, newPageUpdate}) {
 
     function handleRating(rating) {
 
-        fetch(`http://localhost:3000/books/${id}`, { // Updates rating in db.json
+        fetch(`http://localhost:3000/books/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': "application/json"
@@ -95,8 +95,7 @@ function BookCard({book, ratingToggle, bookReading, newPageUpdate}) {
             .then(() => ratingToggle())
     }
 
-    function handleDisplayCurrentlyReading(eventKey) {
-        
+    function handleStatusChange(eventKey) {
         if (eventKey === 'display-in-currently-reading') { 
             fetch(`http://localhost:3000/books/${id}`, { // changes property of book that was cliked
                 method: 'PATCH',
@@ -124,7 +123,7 @@ function BookCard({book, ratingToggle, bookReading, newPageUpdate}) {
             })
                 .then(() => newPageUpdate())
         } else if (eventKey === 'change-to-want-to-read') {
-            fetch(`http://localhost:3000/books/${id}`, { // 
+            fetch(`http://localhost:3000/books/${id}`, { 
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
@@ -133,7 +132,7 @@ function BookCard({book, ratingToggle, bookReading, newPageUpdate}) {
             })
                 .then(() => newPageUpdate())
         } else if (eventKey === 'add-to-favorites') {
-            fetch(`http://localhost:3000/books/${id}`, { // 
+            fetch(`http://localhost:3000/books/${id}`, { 
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
@@ -141,8 +140,8 @@ function BookCard({book, ratingToggle, bookReading, newPageUpdate}) {
                 body: JSON.stringify({favorite: true})
             })
                 .then(() => newPageUpdate())
-        }else if (eventKey === 'remove-from-favorites') {
-            fetch(`http://localhost:3000/books/${id}`, { // 
+        } else if (eventKey === 'remove-from-favorites') {
+            fetch(`http://localhost:3000/books/${id}`, { 
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
@@ -182,15 +181,14 @@ function BookCard({book, ratingToggle, bookReading, newPageUpdate}) {
                     )
                 }
                 {currentlyReading || wantToRead ? 
-                    <DropdownButton id="dropdown-item-button" title="" size='sm' style={{float: 'right'}} onSelect={handleDisplayCurrentlyReading}>
+                    <DropdownButton id="dropdown-item-button" title="" size='sm' style={{float: 'right'}} onSelect={handleStatusChange}>
                     {currentlyReading ? <Dropdown.Item as="button" eventKey={'display-in-currently-reading'}>Display in currently reading</Dropdown.Item> : null}
                     {wantToRead ? <Dropdown.Item as='button' eventKey={'change-to-reading'}>Change to currently reading</Dropdown.Item> : null}
                     {currentlyReading ? <Dropdown.Item as='button' eventKey={'change-to-want-to-read'}>Change to want to read</Dropdown.Item> : null}
                     </DropdownButton>
                     : null}
-                    {/* When clicked display in currently reading, I want to make a patch request to set the displayCurrentlyReading of the last book to false, then the current book to true */}
                 {read ? 
-                    <DropdownButton id="dropdown-item-button" title="" size='sm' style={{float: 'right'}} onSelect={handleDisplayCurrentlyReading}>
+                    <DropdownButton id="dropdown-item-button" title="" size='sm' style={{float: 'right'}} onSelect={handleStatusChange}>
                     {!favorite ? 
                         <Dropdown.Item as='button' eventKey={'add-to-favorites'}>Add to favorites</Dropdown.Item> 
                         : <Dropdown.Item as='button' eventKey={'remove-from-favorites'}>Remove from favorites</Dropdown.Item> } 

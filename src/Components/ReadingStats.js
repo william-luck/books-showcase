@@ -1,5 +1,4 @@
-import {React, useEffect, useState} from "react";
-import Table from 'react-bootstrap/Table'
+import React from "react";
 import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card'
 import CardGroup from 'react-bootstrap/CardGroup'
@@ -14,16 +13,7 @@ import Button from 'react-bootstrap/Button'
 function ReadingStats({books}) {
 
     let booksRead = books.filter(book => book.read)
-    let booksCurrentlyReading = (books.filter(book => book.pagesRead))
     let pagesRead = books.reduce((previous, current) => previous + current.pagesRead, 0)
-
-    // if (!!booksCurrentlyReading) {
-    //     let currentlyReadingPages = booksCurrentlyReading.reduce((previous, current) => previous + current.pagesRead, 0)
-    //     // pagesRead+=booksCurrentlyReading.
-    //     console.log(currentlyReadingPages)
-    //     pagesRead+=currentlyReadingPages
-    // } // will add pages to page total if there's a book being read
-
 
     const popovers = {
         booksRead: 

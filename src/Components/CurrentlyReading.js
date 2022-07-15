@@ -1,20 +1,12 @@
 import {React, useState} from "react";
-import { Card, CardGroup, CarouselItem, ProgressBar } from "react-bootstrap";
+import { Card, CardGroup, ProgressBar } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Accordion from 'react-bootstrap/Accordion'
-import Carousel from 'react-bootstrap/Carousel'
+
 import FeaturedBooks from "./FeaturedBooks";
 
 function CurrentlyReading({bookReading, newPageUpdate, handleMarkAsFinished, favoriteBooks}) {
-
-    console.log(typeof bookReading)
-
-    
-    // const {id, title, image, author, pages, pagesRead, read} = bookReading
-    
-
-    
 
     const [newPageCount, setNewPageCount] = useState('')
 
@@ -81,8 +73,6 @@ function CurrentlyReading({bookReading, newPageUpdate, handleMarkAsFinished, fav
                             </Accordion.Body>
                         </Accordion.Item>
                     </Accordion>
-
-                    
 
                 </Card.Body>
                 <Card.Footer>

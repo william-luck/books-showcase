@@ -1,4 +1,4 @@
-import {React, useState} from "react";
+import React from "react";
 import Carousel from 'react-bootstrap/Carousel'
 
 function FeaturedBooks({ favoriteBooks }) {
@@ -12,7 +12,7 @@ function FeaturedBooks({ favoriteBooks }) {
                         <img
                         className="d-block w-100"
                         src={book.image}
-                        alt="Third slide"
+                        alt="slide item"
                         />
                     </Carousel.Item>
                 )

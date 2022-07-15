@@ -1,6 +1,5 @@
-import {React, useEffect, useState} from "react";
+import {React, useState} from "react";
 import BookCard from "./BookCard";
-import AlertDismissible from "./AlertDismissible";
 import Sort from "./Sort";
 import Search from "./Search";
 
@@ -10,13 +9,12 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Filter from "./Filter";
 
-function BookCardContainer({books, show, setShow, newBookAdded, ratingToggle, bookReading, newPageUpdate}) {
+function BookCardContainer({books, ratingToggle, bookReading, newPageUpdate}) {
 
     const [sort, SetSort] = useState('all')
-    const [searchedTerm, setSearchedTerm] = useState('') // Need to keep this for controlled form
+    const [searchedTerm, setSearchedTerm] = useState('') 
     
     let booksToDisplay = [...books]
-    let filteredRating = ''
 
     function handleSort(sorted) {
         SetSort(sorted)
@@ -24,7 +22,7 @@ function BookCardContainer({books, show, setShow, newBookAdded, ratingToggle, bo
     }
 
     if (sort === 'title') {
-        booksToDisplay.sort((a, b) => { // cr
+        booksToDisplay.sort((a, b) => { 
             let titleA = a.title.toLowerCase();
             let titleB = b.title.toLowerCase();
             if (titleA < titleB) {
@@ -45,7 +43,7 @@ function BookCardContainer({books, show, setShow, newBookAdded, ratingToggle, bo
                 return 1
             }
         })
-    } else if (sort === 'author-first') { // can refactor
+    } else if (sort === 'author-first') {
         booksToDisplay.sort((a, b) => {
             let authorA = a.author.toLowerCase();
             let authorB = b.author.toLowerCase();
@@ -55,7 +53,7 @@ function BookCardContainer({books, show, setShow, newBookAdded, ratingToggle, bo
                 return 1
             }
         })
-    } else if (sort === 'genre') { // cr
+    } else if (sort === 'genre') { 
         booksToDisplay.sort((a, b) => {
             let genreA = a.genre.toLowerCase();
             let genreB = b.genre.toLowerCase();
@@ -82,19 +80,14 @@ function BookCardContainer({books, show, setShow, newBookAdded, ratingToggle, bo
         booksToDisplay = books.filter(book => book.genre === 'Memoir')
     } else if (sort === 'rating-one-star') {
         booksToDisplay = books.filter(book => book.stars === 1)
-        filteredRating = 'one'
     } else if (sort === 'rating-two-star') {
         booksToDisplay = books.filter(book => book.stars === 2)
-        filteredRating = 'two'
     } else if (sort === 'rating-three-star') {
         booksToDisplay = books.filter(book => book.stars === 3)
-        filteredRating = 'three'
     } else if (sort === 'rating-four-star') {
         booksToDisplay = books.filter(book => book.stars === 4)
-        filteredRating = 'four'
     } else if (sort === 'rating-five-star') {
         booksToDisplay = books.filter(book => book.stars === 5)
-        filteredRating = 'five'
     } else if (sort === 'finished') {
         booksToDisplay = books.filter(book => book.read)
     } else if (sort === 'currently-reading') {
@@ -116,10 +109,10 @@ function BookCardContainer({books, show, setShow, newBookAdded, ratingToggle, bo
             {booksToDisplay.length === 0 ? <p>No books match criteria </p> : null }
             </div>
             <Row xs={1} md={5} className="g-5">
-            {booksToDisplay.map((book, idx,) => (
+            {booksToDisplay.map(book => (
                 <Col>
                 <Card>
-                    <BookCard book={book} ratingToggle={ratingToggle} bookReading={bookReading} newPageUpdate={newPageUpdate}/>
+                    <BookCard key={book.id} book={book} ratingToggle={ratingToggle} bookReading={bookReading} newPageUpdate={newPageUpdate}/>
                 </Card>
                 </Col>
             ))}

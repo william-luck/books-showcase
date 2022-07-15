@@ -23,27 +23,46 @@ function NewBookForm({newBookToggle, setShow}) {
     function handleChange(event) {
         console.log('value', event.target.value)
         console.log('property', event.target.name)
-        if ((event.target.name === 'pages') || (event.target.name ==='stars') || (event.target.name === 'pagesRead')) { // Converts to integer if pages value changed
+
+            // If book status is finished, set read = true, pages read to pages, currentlyReading false, displayCurrentlyReading false, wantToRead false, favorite false 
+    // If book status is want to read, set read = false, pages read to 0, currentlyReading false, displayCurrentlyReading false, wantToRead true, favorite false
+    // If currently reading, set read = false, pages read to form data, currentlyReading true, displayCurrentlyReading false, wantToRead false, favorite false 
+
+
+        if ((event.target.name === 'pages') || (event.target.name ==='stars') || (event.target.name === 'pagesRead')) { // Handle integer submissions
             setFormData({
                 ...formData,
                 [event.target.name]: parseInt(event.target.value)
-        })} else if (event.target.name === 'read') {
-            if (event.target.value === 'Want to read') {
+        })} else if (event.target.name === 'status') {
+            if (event.target.value === "Want to read") {
                 setFormData({
                     ...formData,
-                    [event.target.name]: false,
+                    read: false,
                     pagesRead: 0,
-                    wantToRead: true
+                    currentlyReading: false,
+                    displayCurrentlyReading: false, 
+                    wantToRead: true,
+                    favorite: false
                 })
             } else if (event.target.value === 'Currently Reading') {
                 setFormData({
                     ...formData,
-                    [event.target.name]: false
+                    read: false, // don't need pages read, already handled
+                    currentlyReading: true,
+                    displayCurrentlyReading: false, 
+                    wantToRead: false,
+                    favorite: false
                 })
                 setCurrentlyReading(true)
-            } else {
+            } else if (event.target.value === "Finished") {
                 setFormData({
-                    [event.target.value]: true
+                    ...formData,
+                    read: true,
+                    pagesRead: formData.pages,
+                    currentlyReading: false,
+                    displayCurrentlyReading: false, 
+                    wantToRead: false,
+                    favorite: false
                 })
             }
         } else {
@@ -52,7 +71,40 @@ function NewBookForm({newBookToggle, setShow}) {
                 [event.target.name]: event.target.value
             })
         }
+
+        // if ((event.target.name === 'pages') || (event.target.name ==='stars') || (event.target.name === 'pagesRead')) { // Converts to integer if pages value changed
+        //     setFormData({
+        //         ...formData,
+        //         [event.target.name]: parseInt(event.target.value)
+        // })} else if (event.target.name === 'read') {
+        //     if (event.target.value === 'Want to read') {
+        //         setFormData({
+        //             ...formData,
+        //             [event.target.name]: false,
+        //             pagesRead: 0,
+        //             wantToRead: true
+        //         })
+        //     } else if (event.target.value === 'Currently Reading') {
+        //         setFormData({
+        //             ...formData,
+        //             [event.target.name]: false
+        //         })
+        //         setCurrentlyReading(true)
+        //     } else {
+        //         setFormData({
+        //             [event.target.value]: true
+        //         })
+        //     }
+        // } else {
+        //     setFormData({
+        //         ...formData,
+        //         [event.target.name]: event.target.value
+        //     })
+        // }
     }
+
+    // Re do this for all properties...
+
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -121,7 +173,7 @@ function NewBookForm({newBookToggle, setShow}) {
 
             <Form.Group className="mb-3">
                 <Form.Label>Book Status</Form.Label>
-                <Form.Select onChange={handleChange} name="read">
+                <Form.Select onChange={handleChange} name="status">
                     <option>Select..</option>
                     <option>Want to read</option>
                     <option>Currently Reading</option>

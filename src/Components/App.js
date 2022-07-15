@@ -26,8 +26,11 @@ function App() {
   const [pageUpdate, setPageUpdate] = useState(false)
   const [show, setShow] = useState(false);
   const [bookReading, setBookReading] = useState([])
+  const [bookFinished, setBookFinsihed] = useState(false)
+  const [bookFinishedInfo, setBookFinishedInfo] = useState([])
   const [ratingChange, setRatingChange] = useState(true)
   const [favoriteBooks, setFavoriteBooks] = useState([])
+
 
 
 
@@ -56,7 +59,10 @@ function App() {
   }
 
   function handleMarkAsFinished() {
-    console.log(bookReading)
+
+    setBookFinsihed(true)
+    setBookFinishedInfo({...bookReading})
+    setShow(true)
 
     fetch(`http://localhost:3000/books/${bookReading.id}`, {
       method: 'PATCH',
@@ -80,7 +86,7 @@ function App() {
       <Route path="/home">
         <Container>
         {/* <h3>Recommended</h3> */}
-        <AlertDismissible show={show} setShow={setShow} newBookAdded={newBookAdded}/>
+        <AlertDismissible show={show} setShow={setShow} newBookAdded={newBookAdded} bookFinished={bookFinished} bookFinishedInfo={bookFinishedInfo}/>
         <Row>
           {/* <Col md={12}> {bookReading ? <CurrentlyReading bookReading={bookReading} newPageUpdate={newPageUpdate} handleMarkAsFinished={handleMarkAsFinished} favoriteBooks={favoriteBooks}/> 
           : <Card>

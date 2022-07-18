@@ -164,6 +164,7 @@ function BookCard({book, ratingToggle, bookReading, newPageUpdate}) {
                     {author}
                 </Card.Text>
                 <Badge bg='primary'>{genre}</Badge>
+                
                 {(stars === 5 ? fiveStar : // Workaround for buggy imported rating system
                     ((stars === 4 ? fourStar : 
                         ((stars === 3 ? threeStar : 

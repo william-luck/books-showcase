@@ -30,7 +30,19 @@ To add new books, users can enter book information on a controlled new book form
 
 I knew that setState was asynchronous, but this project really taught me the importance of keeping this in mind, especially for actions that I want done only after state updates. The application depends on a lot of functionality to only happen after state updates, like the currently reading container. In some instances the app failed to render because I was using methods on arrays that were in state. This caused some serious headaches, but I’m glad that I’m now very mindful of this. 
 
-The react simple star rating does have some bugs, namely in that the ratings initially liked to stay rendered in the location of the original book card. When filtering / sorting the books on the front end, the ratings would strangely stay in their original location and not be set to their book cards. To get around this, I ended up creating JSX for each individual rating, and used dynamic rendering to display that JSX: paste code block. 
+The react simple star rating does have some bugs, namely in that the ratings initially liked to stay rendered in the location of the original book card. When filtering / sorting the books on the front end, the ratings would strangely stay in their original location and not be set to their book cards. To get around this, I ended up creating JSX for each individual rating, and used dynamic rendering to display that JSX: 
+```
+{(stars === 5 ? fiveStar :
+    ((stars === 4 ? fourStar : 
+        ((stars === 3 ? threeStar : 
+            ((stars === 2 ? twoStar :
+                ((stars === 1 ? oneStar : zeroStar))
+                ))
+            ))
+        ))
+    )}
+``` 
+
 
 As the application grew, it became harder to rely on one-off / temporary solutions, which could have been avoided with better planning from the start. For example, when I had a function return an array of books currently reading, I naively relied on the filter method to return books containing properties with ‘pagesRead,’ since having pages read would indicate that the book was currently being read, and I did not add individual properties for the book status starting off. This caused some brain-breaking bugs when the books were marked as finished, as the pagesRead property still remained (which just matched total pages). It caused duplicate totals in reading stats, and caused to me question my sanity when using the filter method. Similar bugs of these sorts were common across the app as new features were added, not fully realizing which features depended on one another to work. These could have just avoided at the start just by taking the time to put the code into my own words and more carefully thinking through how the components and state interacted with one another.
 
